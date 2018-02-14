@@ -1,12 +1,12 @@
 .espacio-cabecera{
 	width: 100%;
 	height: 10px;
-	background: #ddd;
+	background: #eee;
 }
 .main-galeria-contenedor{
 	width: 100%;
 	min-width: 1200px;
-	background: #ddd;
+	background: #eee;
 }
 .galeria-contenido{
 	padding: 10px 10px 10px 10px;

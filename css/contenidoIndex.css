@@ -45,13 +45,13 @@
 
 }
 .cuerpo-main{
-	background: #ddd;
+	background: #eee;
 	padding: 0px 20px 0px 20px;
 	width: calc(100% - 40px);
 	min-width: 1160px;	
 }
 .cuerpo-decoracion{
-	background: #ddd;
+	background: #eee;
 	width: 100%;
 	background: rgba(0,90,255,0.7);
 	min-width: 1200px;

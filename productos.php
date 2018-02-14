@@ -49,19 +49,24 @@
 	?>	
 	<div class="main-contenido-producto">
 		<div class="main-contenido-cuerpo">
-			<div class="main-contenido-titulo">Productos 
+			<div class="main-contenido-titulo">Productos &nbsp;
 			<?php 
 				if (isset($_GET['categoria'])) {
 					if ($categoria=="Tarjetas") {
-						echo "> Tarjetas de invitaci&oacute;n"; 
+						echo "|&nbsp; Tarjetas de invitaci&oacute;n"; 
 					}else{
-						echo "> ".$categoria; 
+						echo "|&nbsp; ".$categoria; 
 					}
 				}			
 			?>				
 			</div>
 			<div class="main-contenido-fila">
 				<div class="main-contenido-categorias">
+					<div class="cuerpo-buscador">
+						<div class="input-buscador">
+							<div class="texto-lado"><i class="fa fa-search" aria-hidden="true"></i></div>
+						</div>
+					</div>
 					<a href="productos.php?categoria=Sublimaci&oacute;n">
 						<div class="categoria-titulo" id="Sublimaci&oacute;n">
 							Sublimaci&oacute;n

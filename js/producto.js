@@ -114,7 +114,7 @@ function cambiar_imagen(path,num){
 $( "div.producto-contenido" )
 .on( "mouseenter", function() {
     $(".detalle-producto",this).animate({
-        width: "280px"
+        width: $(".img-producto-categoria").width()
     },200);
     $("#btn-"+$(".detalle-producto",this)[0].id,this).css("display","block");
 })

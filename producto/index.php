@@ -41,9 +41,9 @@
 	</div>
 	<div class="main-contenido-producto">
 		<div class="main-contenido-cuerpo">
-			<div class="main-contenido-titulo">Productos > 
+			<div class="main-contenido-titulo">Productos&nbsp; | &nbsp;
 				<a href="../productos.php?categoria=<?php echo $producto['pro_categoria']; ?>"><?php echo $producto['pro_categoria']; ?></a>
-				 > 
+				&nbsp; | &nbsp;
 				 <?php echo $producto['pro_nombre']; ?></div>
 			<div class="main-contenido-fila">
 				<div class="main-contenido-categorias">
@@ -100,15 +100,6 @@
 				<div class="main-contenido-producto-select">
 					<div class="sub-contenido-producto-select">
 						<div class="sub-contenido1">
-							<div class="sub-contenido-principal">
-								<div class="contenido-botones contenido-izq">
-									<button class="btn-flecha" onclick="cambiar_imagen_flecha('iz')"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
-								</div>
-								<img src="../<?php echo $producto['pro_img1']; ?>" class="img-producto">
-								<div class="contenido-botones contenido-der">
-									<button class="btn-flecha" onclick="cambiar_imagen_flecha('de')"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
-								</div>
-							</div>
 							<div class="cuadros-img">
 									<div class="cuadro-img">
 										<img src="../<?php echo $producto['pro_img1']; ?>" class="img-cuadro" onclick="cambiar_imagen('../<?php echo $producto['pro_img1']; ?>',0)">
@@ -117,9 +108,18 @@
 										<img src="../<?php echo $producto['pro_img2']; ?>" class="img-cuadro" onclick="cambiar_imagen('../<?php echo $producto['pro_img2']; ?>',1)">
 									</div>
 									<div class="cuadro-img">
-										<img src="../<?php echo $producto['pro_img3']; ?>" class="img-cuadro" onclick="cambiar_imagen('../<?php echo $producto['pro_img3']; ?>',2)">
+										<img src="../<?php echo $producto['pro_img3']; ?>" class="img-cuadro img-cuadro-ulti" onclick="cambiar_imagen('../<?php echo $producto['pro_img3']; ?>',2)">
 									</div>
 							</div>
+							<div class="sub-contenido-principal">
+								<img src="../<?php echo $producto['pro_img1']; ?>" class="img-producto">
+								<div class="contenido-botones contenido-izq">
+									<button class="btn-flecha" onclick="cambiar_imagen_flecha('iz')"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+								</div>								
+								<div class="contenido-botones contenido-der">
+									<button class="btn-flecha" onclick="cambiar_imagen_flecha('de')"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+								</div>
+							</div>							
 						</div>
 						<div class="sub-contenido2">
 							<div class="contenido-descripcion">
@@ -147,7 +147,6 @@
 								<div class="descripcion-label-minus">(Delivery gratis)</div>
 								<button class="btn-cobertura">Revisar cobertura de delivery</button>
 								<div class="separador-descripcion"></div>
-								<div class="descripcion-label">Descripci&oacute;n</div>
 								<?php
 									$descripcion=$producto['pro_descripcion'];
 									$palabra="";
@@ -173,7 +172,10 @@
 									}
 									?>										
 								</div>
-								<button class="btn-comprar">Comprar</button>
+								<div class="separador-descripcion"></div>
+								<div class="contenido-btn-comprar">
+									<button class="btn-comprar">Comprar</button>
+								</div>								
 							</div>
 						</div>
 					</div>					
