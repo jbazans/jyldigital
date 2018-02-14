@@ -1,0 +1,145 @@
+.nav-main{
+	z-index: 100;
+}
+.separador-contactanos{
+	width: 100%;
+	height: 20px;
+	background: #ddd;
+}
+.contactanos-cuerpo-main{
+	width: 100%;
+	min-width: 1200px;
+	background: #ddd;
+}
+.cuerpo-contactanos{
+	padding: 10px 10px 10px 10px;
+	width: 1180px;
+	background: white;
+	margin-left: auto;
+	margin-right: auto;
+}
+.titulo-contactanos{
+	font-size: 30px;
+	padding-top: 10px;
+	width: 100%;
+	text-align: center;
+	color: #333;
+}
+.subtitulo-contactanos{
+	font-size: 18px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 100%;
+	text-align: center;
+	color: #333;
+}
+.medio-contacto{
+	width: 100%;
+}
+.titulo-contacto{
+	font-size: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 100%;
+	text-align: center;
+	color: #333;
+	font-family: 'Nanum Pen Script', cursive;
+	font-family: 'Permanent Marker', cursive;
+}
+.fila-iconos{
+	width: 100%;
+	display: flex;	
+	padding-bottom: 20px;
+}
+.icono-red{
+	width: 25%;
+	text-align: center;
+}
+.img-red{
+	width: 60%;
+}
+.separador-medios{
+	width: 100%;
+	height: 20px;
+}
+#map{
+	margin: 0px 10px 0px 10px;
+    height: 500px;
+    width: calc(100% - 20px);
+}
+.separador-contacto{
+	width: 100%;
+	height: 10px;
+}
+.medio-verde{
+	background: #20a700;
+}
+.fila-datos{
+	padding: 10px 10px 5px 10px;
+	width: calc(100% - 20px);
+	padding-bottom: 15px;
+}
+.dato{
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+	color: #333;
+	padding-bottom: 5px;
+}
+.dato i{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.medio-red{
+	background: red;
+}
+.columna-contacto{
+	width: 100%;
+	display: flex;
+	padding-bottom: 10px;
+}
+.columna-mitad1{
+	width: 30%;
+}
+.columna-mitad2{
+	width: 70%;
+}
+.fila-datos-form{
+	padding: 0px 10px 5px 10px;
+	width: calc(100% - 20px);
+	padding-bottom: 15px;
+}
+.texto-label{
+	font-size: 20px;
+	padding-bottom: 5px;
+}
+.separador-label{
+	width: 100%;
+	height: 10px;
+}
+input{
+	width: calc(100% - 10px);
+	font-size: 17px;
+	padding: 5px 8px 5px 8px;
+}
+.text-area{
+	width: calc(100%);
+	font-size: 17px;
+	height: 180px;
+}
+.cuerpo-btn{
+	width: 100%;
+	text-align: center;
+}
+.btn-enviar{
+	font-size: 25px;
+	background: rgb(8,8,150);
+	color: white;
+	margin-top: 5px;
+	padding: 5px 10px 5px 10px;
+	border-style: none;
+	cursor: pointer;
+}
+.btn-enviar:hover{
+	background: rgb(13,80,190);
+}
