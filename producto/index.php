@@ -33,6 +33,14 @@
 	<?php
 		cabecera();
 	?>	
+	<div class="pantalla-compra">
+		<div class="formulario-compra">
+			<div class="cabecera"></div>
+			<div class="opciones">
+				<button class="btn-cancelar">Cancelar</button>
+			</div>
+		</div>
+	</div>
 	<div class="main-cobertura">
 		<div class="main-contenido-cobertura">
 			<div id="map"></div>
@@ -47,7 +55,13 @@
 				 <?php echo $producto['pro_nombre']; ?></div>
 			<div class="main-contenido-fila">
 				<div class="main-contenido-categorias">
-					<div class="main-contenido-categorias">
+					<div class="cuerpo-buscador">
+						<div class="input-buscador">
+							<div class="texto-lado"><i class="fa fa-search" aria-hidden="true"></i></div>
+							<input type="text" id="buscar" placeholder="Buscar..." onfocus="this.placeholder = ''"
+							onblur="this.placeholder = 'Buscar...'">
+						</div>
+					</div>
 					<a href="../productos.php?categoria=Sublimaci&oacute;n">
 						<div class="categoria-titulo" id="Sublimaci&oacute;n">
 							Sublimaci&oacute;n
@@ -96,8 +110,7 @@
 						</div>
 					</a>
 				</div>
-				</div>
-				<div class="main-contenido-producto-select">
+				<div class="main-contenido-producto-select select-producto">
 					<div class="sub-contenido-producto-select">
 						<div class="sub-contenido1">
 							<div class="cuadros-img">
@@ -121,6 +134,7 @@
 								</div>
 							</div>							
 						</div>
+						<div class="sub-contenido3"></div>
 						<div class="sub-contenido2">
 							<div class="contenido-descripcion">
 								<div class="descripcion-titulo"><?php echo $producto['pro_nombre']; ?></div>
@@ -174,7 +188,7 @@
 								</div>
 								<div class="separador-descripcion"></div>
 								<div class="contenido-btn-comprar">
-									<button class="btn-comprar">Comprar</button>
+									<button class="btn-comprar"onclick="procesar_compra('<?php echo $producto['pro_id']; ?>')">Comprar</button>
 								</div>								
 							</div>
 						</div>

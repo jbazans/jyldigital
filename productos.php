@@ -15,13 +15,24 @@
 				}
 		}
 	}else{
-		if ($con){
-				$sql = "SELECT * FROM PRODUCTOS where pro_estado='destacado'";
-				$result = $con->query($sql);
-				$productos=array();
-				while($row = $result->fetch_assoc()) {
-					array_push($productos, $row);
-				}
+		if (isset($_GET['producto'])) {
+			if ($con){
+					$sql = "SELECT * FROM PRODUCTOS where pro_nombre LIKE '%".$_GET['producto']."%'";
+					$result = $con->query($sql);
+					$productos=array();
+					while($row = $result->fetch_assoc()) {
+						array_push($productos, $row);
+					}
+			}
+		}else{
+			if ($con){
+					$sql = "SELECT * FROM PRODUCTOS";
+					$result = $con->query($sql);
+					$productos=array();
+					while($row = $result->fetch_assoc()) {
+						array_push($productos, $row);
+					}
+			}
 		}
 	}		
 ?>
@@ -65,6 +76,8 @@
 					<div class="cuerpo-buscador">
 						<div class="input-buscador">
 							<div class="texto-lado"><i class="fa fa-search" aria-hidden="true"></i></div>
+							<input type="text" id="buscar" placeholder="Buscar..." onfocus="this.placeholder = ''"
+							onblur="this.placeholder = 'Buscar...'">
 						</div>
 					</div>
 					<a href="productos.php?categoria=Sublimaci&oacute;n">
@@ -187,6 +200,6 @@
 	<?php
 		footer();
 	?>
-	<script type="text/javascript" src="js/producto.js"></script>
+	<script type="text/javascript" src="js/productos.js"></script>
 </body>
 </html>

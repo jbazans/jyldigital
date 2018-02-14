@@ -128,20 +128,6 @@ $( "div.producto-contenido" )
 $("#buscar").keypress(function(e){
     var tecla = (document.all) ? e.keyCode : e.which;
     if (tecla==13){
-        window.location.href='../productos.php?producto='+document.getElementById("buscar").value;
+        window.location.href='productos.php?producto='+document.getElementById("buscar").value;
     }
-});
-
-function procesar_compra(id){
-    var a=document.createElement("a");
-    a.setAttribute('href', 'https://www.facebook.com/messages/t/JyLPublimprenta');
-    a.setAttribute('target', '_blank');
-    a.click();
-    /*
-    $(".pantalla-compra").fadeIn(200);
-    */
-}
-
-$(".btn-cancelar").click(function(){
-    $(".pantalla-compra").fadeOut(200);
 });
