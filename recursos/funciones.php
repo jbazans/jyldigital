@@ -8,7 +8,11 @@ function quitar_tildes($cadena) {
 
 function twodecimales($precio){
 	while(strlen($precio)<5){
-		$precio.="0";
+		if (strlen($precio)==2) {
+			$precio.=".";
+		}else{
+			$precio.="0";
+		}		
 	}
 	return $precio;
 }
