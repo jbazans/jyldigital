@@ -14,7 +14,7 @@ body{
 	background: rgba(250,250,250,0.7);
 	top: 0px;
 	left: 0px;
-	z-index: 150;
+	z-index: 200;
 }
 .centro-pantalla{
 	padding-top: 80px;
@@ -126,4 +126,82 @@ a{
 	min-width: 1200px;
 	padding-top: 30px;
 	padding-bottom: 30px;
+}
+.opciones-movil{
+	display: none;
+}
+.drop-menu-movil{
+	display: none;
+}
+@media(max-width: 500px){
+	body{
+		min-width: 100%;	
+	}
+	.pantalla-carga{
+		min-width: 100%;
+		display: block;
+	}
+	.centro-pantalla{
+		margin-left: 0px;
+		margin-right: 0px;
+		padding-top: 40px;
+		width: 80%;
+	}
+	.img-logo{
+		width: 100%;
+	}
+	.img-carga{
+		padding-top: 10px;
+		width: 100%;
+	}
+	.mensaje{
+		font-size: 20px;
+		color: #333;
+	}
+	.cabecera-main{
+		display: none;
+	}
+	.nav-main{
+		min-width: 100%;
+	}
+	.nav-main-cuerpo{
+		width: 100%;
+		display: flex;
+	}
+	.centrar{
+		width: calc(100% - 60px);
+	}
+	.img-icono{
+		height: 50px;
+	}
+	.nav-contenido{
+		display: none;
+	}
+	.opciones-movil{
+		position: fixed;
+		top: 60px;
+		left: 0px;
+		z-index: 210;
+		width: 100%;
+		background: #eee;
+	}
+	.drop-menu-movil{
+		padding: 5px 5px 5px 5px;
+		width: 50px;
+		display: block;
+	}
+	.icono-menu{
+		padding-top: 5px;
+		color: #555;
+		font-size: 40px;
+	}
+	.opc-contenido{
+		width: 100%;
+	}
+	.banner-main{
+		min-width: 100%;
+	}
+	.img-banner{
+		min-width: 100%;
+	}
 }

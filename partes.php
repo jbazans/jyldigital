@@ -46,8 +46,33 @@
 					</div>
 				</a>				
 			</div>
+			<div class="drop-menu-movil">
+				<div class="icono-menu" onclick="mostrar_menu()"><i class="fa fa-bars" aria-hidden="true"></i></div>
+			</div>
 		</div>
 	</nav>
+	<div class="opciones-movil">
+		<a href="#">
+			<div class="opc-contenido" id="nosotros">
+				<div class="nav-contenido-texto">Nosotros</div>
+			</div>
+		</a>
+		<a href="productos.php">
+			<div class="opc-contenido" id="productos">
+				<div class="nav-contenido-texto">Productos</div>
+			</div>
+		</a>
+		<a href="galeria.php">
+			<div class="opc-contenido" id="galeria">
+				<div class="nav-contenido-texto">Galer&#237;a</div>
+			</div>
+		</a>			
+		<a href="contactanos.php">
+			<div class="opc-contenido" id="contactanos">
+				<div class="nav-contenido-texto">Cont&#225;ctanos</div>
+			</div>
+		</a>	
+	</div>
 <?php
 	}
 
