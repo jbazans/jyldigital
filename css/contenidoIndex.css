@@ -101,12 +101,12 @@
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	background: rgba(0,45,125,0.7);
+	background: rgba(8,8,150,0.5);
 	padding-top: 100px;
 }
 .btn-ver-detalle{
 	background: white;
-	color: #2334a6;
+	color: rgb(8,8,150);
 	border-style: none;
 	display: none;
 	margin-left: auto;

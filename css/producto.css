@@ -152,17 +152,17 @@ input[type="text"]{
 }
 .descripcion-oferta{
 	background: red;
-	width: 100px;
+	width: 80px;
 	margin-left: auto;
 	margin-right: auto;
 	color: white;
+	border-radius: 5px 5px 5px 5px;
 }
 .detalle-producto{
 	width: 0%;
 	height: 280px;
 	position: absolute;
 	top: 10px;
-	left: 10px;
 	background: rgba(8,8,150,0.5);
 	padding-top: 100px;
 }
@@ -350,4 +350,25 @@ input[type="text"]{
 }
 .btn-cancelar:hover{
 	background: #101b65;
+}
+.contenido-recomendaciones{
+	width: calc(100%);
+	background: #eee;
+}
+.titulo-recomendacion{
+	padding: 10px 0px 0px 0px;
+	width: calc(100%);
+	font-size: 25px;
+	font-family: 'Rubik', sans-serif;
+	color: #555;
+}
+.productos-recomendados{
+	width: 100%;
+	display: flex;
+	position: relative;
+}
+.producto-recomendado{
+	margin: 10px 10px 0px 10px;
+	width: calc(100% - 20px);
+	background: white;
 }

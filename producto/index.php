@@ -192,7 +192,34 @@
 								</div>								
 							</div>
 						</div>
-					</div>					
+					</div>	
+					<div class="contenido-recomendaciones">
+						<div class="titulo-recomendacion">B&uacute;squedas similares</div>
+						<div class="productos-recomendados">
+						<?php
+						if ($con){
+							$sql = "SELECT * FROM PRODUCTOS WHERE pro_oferta is NOT NULL limit 4";
+							$result = $con->query($sql);
+							while($row = $result->fetch_assoc()) {
+						?>
+							<div class="producto-recomendado">
+								<img src="../<?php echo $row['pro_img1']; ?>" class="img-producto-categoria">
+								<div class="descripcion-producto">
+									<div class="descripcion-texto-producto"><?php echo $row['pro_nombre']; ?></div>
+									<div class="descripcion-oferta">OFERTA</div>
+								</div>
+								<div class="detalle-producto" id="<?php echo $row['pro_id']; ?>">
+									<a href="../producto/?idproducto=<?php echo $row['pro_id']; ?>">
+									<button class="btn-ver-detalle" id="btn-<?php echo $row['pro_id']; ?>">Ver detalles</button>
+									</a>
+								</div>
+							</div>
+						<?php
+							}
+						}
+						?>
+						</div>
+					</div>				
 				</div>		
 			</div>	
 		</div>		

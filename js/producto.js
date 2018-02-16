@@ -111,12 +111,13 @@ function cambiar_imagen(path,num){
     posicion=num;
 }
 
-$( "div.producto-contenido" )
+$( "div.producto-recomendado" )
 .on( "mouseenter", function() {
     $(".detalle-producto",this).animate({
         width: $(".img-producto-categoria").width()
     },200);
     $("#btn-"+$(".detalle-producto",this)[0].id,this).css("display","block");
+    console.log(this);
 })
 .on( "mouseleave", function() {
     $(".detalle-producto",this).animate({
