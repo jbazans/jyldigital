@@ -1,3 +1,7 @@
+.fondo-blur{
+	filter: blur(6px);
+	width: 100%;
+}
 .banner-main{
 	width: 100%;
 	min-width: 1200px;
@@ -97,7 +101,6 @@
 }
 .detalle-producto{
 	width: 0%;
-	height: 300px;
 	position: absolute;
 	top: 0px;
 	left: 0px;

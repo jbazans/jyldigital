@@ -64,6 +64,7 @@ body{
 	min-width: 1200px;
 	top: 0px;
 	z-index: 150;
+	position: block;
 }
 .nav-main-cuerpo{
 	margin-right: auto;
@@ -142,10 +143,9 @@ a{
 		display: block;
 	}
 	.centro-pantalla{
-		margin-left: 0px;
-		margin-right: 0px;
-		padding-top: 40px;
-		width: 80%;
+		margin-left: 25%;
+		padding-top: 120px;
+		width: 50%;
 	}
 	.img-logo{
 		width: 100%;
@@ -185,6 +185,9 @@ a{
 		width: 100%;
 		background: #eee;
 	}
+	.opc-contenido{
+		padding: 5px 10px 5px 10px; 
+	}
 	.drop-menu-movil{
 		padding: 5px 5px 5px 5px;
 		width: 50px;
@@ -198,10 +201,15 @@ a{
 	.opc-contenido{
 		width: 100%;
 	}
-	.banner-main{
+	.separador-footer{
+		min-width: 100%;
+		height: 20px;
+	}
+	.footer-main{
 		min-width: 100%;
 	}
-	.img-banner{
+	.footer-contenido{
 		min-width: 100%;
 	}
+
 }

@@ -1,13 +1,6 @@
 <?php
 	function cabecera(){
-?>
-	<div class="pantalla-carga">
-		<div class="centro-pantalla">
-			<img src="img/logo.png" class="img-logo">
-			<div class="mensaje">Cargando recursos...</div>
-			<img src="img/gif/carga.gif" class="img-carga">
-		</div>
-	</div>
+?>	
 	<div class="cabecera-main">
 		<div class="cabecera-contacto-numero-izquierdo">
 			<div class="contacto-texto">Env&#237;o gratis desde montos mayores a S/. 200.00</div>

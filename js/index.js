@@ -7,10 +7,15 @@ function precarga(){
 }
 
 function animaciones(){
+	$(".fondo-blur").css("filter","blur(0px)");
 	$(".pantalla-carga").fadeOut(500);
 	document.getElementById("logo").style.transform="translateY(0px)";
 	var height=$(".img-producto").height()-100;
-	$(".detalle-producto").css("height",height);
+	if (document.documentElement.clientWidth>500) {
+		$(".detalle-producto").css("height",height);
+	}
+	var margin=($(".img-banner").width()-document.documentElement.clientWidth)/2;
+	$(".img-banner").css("margin-left","-"+margin);
 	setTimeout('efectoTexto1()',2000);
 	setInterval('ocultarTexto()',10000);
 }

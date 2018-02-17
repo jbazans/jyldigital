@@ -15,15 +15,26 @@
 	<script type="text/javascript" src="js/jquery/jquery-3.2.1.min.js"></script>
 	<link rel="icon" type="image/png" href="img/icono/icono.png" />
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link rel="stylesheet" type="text/css" href="css/contenidoIndex.css">
+	<link rel="stylesheet" type="text/css" href="css/contenidoIndex.css" media="screen and (min-width:501px)">
+	<link rel="stylesheet" type="text/css" href="css/contenidoIndex-movil.css" media="screen and (max-width:500px)">
 	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 </head>
 <body onload="animaciones()">
+	<div class="pantalla-carga">
+		<div class="centro-pantalla">
+			<img src="img/logo.png" class="img-logo">
+			<div class="mensaje">Cargando recursos...</div>
+			<img src="img/gif/carga.gif" class="img-carga">
+		</div>
+	</div>
+	<div class="fondo-blur">
 	<?php
 		cabecera();
 	?>	
 	<div class="banner-main">
-		<img src="img/regalo.jpg" class="img-banner">	
+		<div class="contenedor-img">
+			<img src="img/regalo.jpg" class="img-banner">
+		</div>			
 		<div class="textosanimados">
 			<div class="banner-textoanimado" id="texto1">Crea</div>
 			<div class="banner-textoanimado" id="texto2">momentos</div>
@@ -129,7 +140,7 @@
 	</div>
 	<div class="cuerpo-main">
 		<div class="cuerpo-servicios">
-			<div class="cuerpo-contenedor-servicios">
+			<div class="cuerpo-contenedor-servicios cuerpo-movil-servicios">
 				<div class="cuerpo-servicio">
 					<a href="https://www.facebook.com/JyLPublimprenta/" target="_blank"><img src="img/social/facebook.png" class="img-social"></a>
 				</div>
@@ -148,6 +159,7 @@
 	<?php
 		footer();
 	?>
+	</div>
 	<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
