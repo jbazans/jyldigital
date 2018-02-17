@@ -64,7 +64,7 @@ body{
 	min-width: 1200px;
 	top: 0px;
 	z-index: 150;
-	position: block;
+	position: relative;
 }
 .nav-main-cuerpo{
 	margin-right: auto;
@@ -103,11 +103,6 @@ a{
 	transition: 1s;
 	transform: translateY(-100px);
 }
-
-
-
-
-
 .separador-footer{
 	width: 100%;
 	height: 40px;
@@ -181,12 +176,15 @@ a{
 		position: fixed;
 		top: 60px;
 		left: 0px;
-		z-index: 210;
+		z-index: 140;
 		width: 100%;
 		background: #eee;
+		box-shadow: 0px 0px 10px 0px rgba(50,50,50,0.5);
 	}
 	.opc-contenido{
-		padding: 5px 10px 5px 10px; 
+		padding: 10px 10px 10px 10px; 
+		width: calc(100% - 20px);
+		font-size: 20px;
 	}
 	.drop-menu-movil{
 		padding: 5px 5px 5px 5px;
@@ -198,9 +196,6 @@ a{
 		color: #555;
 		font-size: 40px;
 	}
-	.opc-contenido{
-		width: 100%;
-	}
 	.separador-footer{
 		min-width: 100%;
 		height: 20px;
@@ -211,5 +206,4 @@ a{
 	.footer-contenido{
 		min-width: 100%;
 	}
-
 }

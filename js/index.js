@@ -47,16 +47,20 @@ function efectoTexto3(){
 
 $( "div.cuerpo-main-producto" )
 .on( "mouseenter", function() {
-    $(".detalle-producto",this).animate({
-    	width: "100%"
-    },200);
-    $("#btn-"+$(".detalle-producto",this)[0].id,this).css("display","block");
+	if (document.documentElement.clientWidth>500) {
+	    $(".detalle-producto",this).animate({
+	    	width: "100%"
+	    },200);
+	    $("#btn-"+$(".detalle-producto",this)[0].id,this).css("display","block");
+	}
 })
 .on( "mouseleave", function() {
-    $(".detalle-producto",this).animate({
-    	width: "0%"
-    },200);
-    $("#btn-"+$(".detalle-producto",this)[0].id,this).css("display","none");
+	if (document.documentElement.clientWidth>500) {
+	    $(".detalle-producto",this).animate({
+	    	width: "0%"
+	    },200);
+	    $("#btn-"+$(".detalle-producto",this)[0].id,this).css("display","none");
+	}
 });
 
 $(window).scroll(function () {
