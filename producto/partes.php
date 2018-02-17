@@ -45,6 +45,11 @@
 		</div>
 	</nav>
 	<div class="opciones-movil">
+		<a href="../">
+			<div class="opc-contenido" id="nosotros">
+				<div class="nav-contenido-texto">Inicio</div>
+			</div>
+		</a>
 		<a href="#">
 			<div class="opc-contenido" id="nosotros">
 				<div class="nav-contenido-texto">Nosotros</div>

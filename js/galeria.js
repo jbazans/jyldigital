@@ -10,7 +10,9 @@ function precarga(){
 function animaciones(categoria){
 	$(".pantalla-carga").fadeOut(500);
 	document.getElementById("logo").style.transform="translateY(0px)";
-	$(".contenido-linea").css("height",$(".fila-galeria").height());
+	if (document.documentElement.clientWidth>500) {
+		$(".contenido-linea").css("height",$(".fila-galeria").height());
+	}	
 }
 
 $(window).scroll(function () {
@@ -21,3 +23,9 @@ $(window).scroll(function () {
 		$(".nav-main").css("position","relative");
 	}
 });
+
+function mostrar_menu(){
+	$(".opciones-movil").animate({
+		height:'toggle'
+	});
+}

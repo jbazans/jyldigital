@@ -15,7 +15,8 @@
 	<script type="text/javascript" src="js/jquery/jquery-3.2.1.min.js"></script>
 	<link rel="icon" type="image/png" href="img/icono/icono.png" />
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link rel="stylesheet" type="text/css" href="css/galeria.css">
+	<link rel="stylesheet" type="text/css" href="css/galeria.css" media="screen and (min-width:501px)">
+	<link rel="stylesheet" type="text/css" href="css/galeria-movil.css" media="screen and (max-width:500px)">
 	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script|Permanent+Marker" rel="stylesheet">
@@ -38,6 +39,7 @@
 					<div class="titulo-galeria">Cuadros en Banner - Figu´s Bar Rock</div>
 					<div class="fecha-galeria">Oct. 2017</div>
 					<img src="img/galeria/cuadros-banner.jpg" class="img-galeria">
+					<div class="linea-decoracion linea-web"></div>
 				</div>				
 				<div class="contenido-linea"></div>
 				<div class="contenedor-img">

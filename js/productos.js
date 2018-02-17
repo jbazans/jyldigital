@@ -8,13 +8,16 @@ function precarga(){
 }
 
 function animaciones(categoria){
+    $(".fondo-blur").css("filter","blur(0px)");
 	$(".pantalla-carga").fadeOut(500);
 	document.getElementById("logo").style.transform="translateY(0px)";
     if (categoria!="destacado") {
         $("#"+categoria).addClass("categoria-titulo-activo");
     }    
-    var height=$(".img-producto-categoria").height()-100;
-    $(".detalle-producto").css("height",height);
+    if (document.documentElement.clientWidth>500) {
+        var height=$(".img-producto-categoria").height()-100;
+        $(".detalle-producto").css("height",height);
+    }
 }
 
 $(".btn-cobertura").click(function(){
@@ -137,3 +140,25 @@ function mostrar_menu(){
         height:'toggle'
     });
 }
+
+var cat_menu=0;
+$(".categorias-menu").click(function(){
+    if (cat_menu==0) {
+        $(".categorias-menu").empty();
+        $(".categorias-menu").append('<i class="fa fa-chevron-up" aria-hidden="true"></i> Categorias');
+        cat_menu=1;
+    }else{
+        $(".categorias-menu").empty();
+        $(".categorias-menu").append('<i class="fa fa-chevron-down" aria-hidden="true"></i> Categorias');
+        cat_menu=0;
+    }
+    $(".main-contenido-categorias").animate({
+        height:'toggle'
+    });
+});
+
+function sugerencia(producto){
+    var a=document.createElement("a");
+    a.setAttribute('href', 'productos.php?producto='+producto);
+    a.click();
+}   

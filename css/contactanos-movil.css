@@ -7,16 +7,15 @@
 	background: #eee;
 }
 .contactanos-cuerpo-main{
-	width: 100%;
-	min-width: 1200px;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: calc(100% - 20px);
 	background: #eee;
 }
 .cuerpo-contactanos{
-	padding: 10px 10px 10px 10px;
-	width: 1180px;
+	padding: 0px 0px 10px 0px;
+	width: 100%;
 	background: white;
-	margin-left: auto;
-	margin-right: auto;
 }
 .titulo-contactanos{
 	font-size: 30px;
@@ -37,7 +36,7 @@
 	width: 100%;
 }
 .titulo-contacto{
-	font-size: 40px;
+	font-size: 30px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	width: 100%;
@@ -45,6 +44,9 @@
 	color: #333;
 	font-family: 'Nanum Pen Script', cursive;
 	font-family: 'Permanent Marker', cursive;
+}
+.img-social-contacto{
+	width: 80%;
 }
 .fila-iconos{
 	width: 100%;
@@ -58,17 +60,15 @@
 .img-red{
 	width: 60%;
 }
-.dato-movil{
-	display: none;
-}
 .separador-medios{
-	width: 100%;
-	height: 20px;
 }
 #map{
 	margin: 0px 10px 0px 10px;
-    height: 500px;
+    height: 400px;
     width: calc(100% - 20px);
+}
+.dato-web{
+	display: none;
 }
 .separador-contacto{
 	width: 100%;
@@ -98,17 +98,17 @@
 }
 .columna-contacto{
 	width: 100%;
-	display: flex;
 	padding-bottom: 10px;
 }
 .columna-mitad1{
-	width: 30%;
+	width: 100%;
 }
 .columna-mitad2{
-	width: 70%;
+	padding-top: 10px;
+	width: 100%;
 }
 .fila-datos-form{
-	padding: 0px 10px 5px 10px;
+	padding: 0px 10px 0px 10px; 
 	width: calc(100% - 20px);
 	padding-bottom: 15px;
 }
@@ -121,7 +121,7 @@
 	height: 10px;
 }
 input{
-	width: calc(100% - 10px);
+	width: calc(100%);
 	font-size: 17px;
 	padding: 5px 8px 5px 8px;
 }

@@ -64,3 +64,9 @@ function sendMail(){
         }
     });
 }
+
+function mostrar_menu(){
+    $(".opciones-movil").animate({
+        height:'toggle'
+    });
+}

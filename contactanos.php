@@ -15,7 +15,8 @@
 	<script type="text/javascript" src="js/jquery/jquery-3.2.1.min.js"></script>
 	<link rel="icon" type="image/png" href="img/icono/icono.png" />
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link rel="stylesheet" type="text/css" href="css/contactanos.css">
+	<link rel="stylesheet" type="text/css" href="css/contactanos.css" media="screen and (min-width:501px)">
+	<link rel="stylesheet" type="text/css" href="css/contactanos-movil.css" media="screen and (max-width:500px)">
 	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script|Permanent+Marker" rel="stylesheet">
 </head>
@@ -32,16 +33,16 @@
 				<div class="titulo-contacto">Redes sociales</div>
 				<div class="fila-iconos">
 					<div class="icono-red">
-						<a href="https://www.facebook.com/JyLPublimprenta/" target="_blank"><img src="img/social/facebook.png"></a>	
+						<a href="https://www.facebook.com/JyLPublimprenta/" target="_blank"><img src="img/social/facebook.png" class="img-social-contacto"></a>	
 					</div>
 					<div class="icono-red">
-						<a href="https://www.youtube.com/channel/UCOuWtGP7agkGZaJBnjRVcgw" target="_blank"><img src="img/social/youtube.png"></a>	
+						<a href="https://www.youtube.com/channel/UCOuWtGP7agkGZaJBnjRVcgw" target="_blank"><img src="img/social/youtube.png" class="img-social-contacto"></a>	
 					</div>
 					<div class="icono-red">
-						<a href="#" target="_blank"><img src="img/social/instagram.png"></a>	
+						<a href="#" target="_blank"><img src="img/social/instagram.png" class="img-social-contacto"></a>	
 					</div>
 					<div class="icono-red">
-						<a href="#" target="_blank"><img src="img/social/twitter.png"></a>	
+						<a href="#" target="_blank"><img src="img/social/twitter.png" class="img-social-contacto"></a>	
 					</div>
 				</div>
 			</div>
@@ -53,7 +54,9 @@
 				<div class="separador-contacto"></div>
 				<div class="fila-datos">
 					<div class="dato"><i class="fa fa-map-marker" aria-hidden="true"></i> Av. 9 de setiembre mz. k1 lote 53 - Jicamarca, Anexo 8</div>
-					<div class="dato"><i class="fa fa-mobile" aria-hidden="true"></i> 970 653 130  -  <i class="fa fa-whatsapp" aria-hidden="true"></i> 970 653 130 / 995 854 731</div>
+					<div class="dato dato-web"><i class="fa fa-mobile" aria-hidden="true"></i> 970 653 130  -  <i class="fa fa-whatsapp" aria-hidden="true"></i> 970 653 130 / 995 854 731</div>
+					<div class="dato dato-movil"><i class="fa fa-mobile" aria-hidden="true"></i> 970 653 130</div>
+					<div class="dato dato-movil"><i class="fa fa-whatsapp" aria-hidden="true"></i> 970 653 130 / 995 854 731</div>
 					<div class="dato"><i class="fa fa-envelope-o" aria-hidden="true"></i> jylimprenta@gmail.com</div>
 				</div>
 			</div>

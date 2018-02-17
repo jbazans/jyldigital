@@ -155,3 +155,19 @@ function mostrar_menu(){
         height:'toggle'
     });
 }
+
+var cat_menu=0;
+$(".categorias-menu").click(function(){
+    if (cat_menu==0) {
+        $(".categorias-menu").empty();
+        $(".categorias-menu").append('<i class="fa fa-chevron-up" aria-hidden="true"></i> Categorias');
+        cat_menu=1;
+    }else{
+        $(".categorias-menu").empty();
+        $(".categorias-menu").append('<i class="fa fa-chevron-down" aria-hidden="true"></i> Categorias');
+        cat_menu=0;
+    }
+    $(".main-contenido-categorias").animate({
+        height:'toggle'
+    });
+});

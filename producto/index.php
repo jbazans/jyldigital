@@ -61,7 +61,11 @@
 			<div class="main-contenido-titulo">Productos&nbsp; | &nbsp;
 				<a href="../productos.php?categoria=<?php echo $producto['pro_categoria']; ?>"><?php echo $producto['pro_categoria']; ?></a>
 				&nbsp; | &nbsp;
-				 <?php echo $producto['pro_nombre']; ?></div>
+				 <?php echo $producto['pro_nombre']; ?>
+			</div>
+			<div class="categorias-menu">
+				<i class="fa fa-chevron-down" aria-hidden="true"></i> Categorias
+			</div>
 			<div class="main-contenido-fila">
 				<div class="main-contenido-categorias">
 					<div class="cuerpo-buscador">

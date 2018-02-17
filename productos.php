@@ -20,8 +20,10 @@
 					$sql = "SELECT * FROM PRODUCTOS where pro_nombre LIKE '%".$_GET['producto']."%'";
 					$result = $con->query($sql);
 					$productos=array();
+					$cont_palabra=0;
 					while($row = $result->fetch_assoc()) {
 						array_push($productos, $row);
+						$cont_palabra++;
 					}
 			}
 		}else{
@@ -49,7 +51,8 @@
 	<script type="text/javascript" src="js/jquery/jquery-3.2.1.min.js"></script>
 	<link rel="icon" type="image/png" href="img/icono/icono.png" />
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link rel="stylesheet" type="text/css" href="css/producto.css">
+	<link rel="stylesheet" type="text/css" href="css/producto.css" media="screen and (min-width:501px)">
+	<link rel="stylesheet" type="text/css" href="css/producto-movil.css" media="screen and (max-width:500px)">
 	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 </head>
 <body onload="animaciones('<?php if (isset($_GET["categoria"])) {
@@ -79,13 +82,22 @@
 				}			
 			?>				
 			</div>
+			<div class="categorias-menu">
+				<i class="fa fa-chevron-down" aria-hidden="true"></i> Categorias
+			</div>
 			<div class="main-contenido-fila">
 				<div class="main-contenido-categorias">
 					<div class="cuerpo-buscador">
 						<div class="input-buscador">
 							<div class="texto-lado"><i class="fa fa-search" aria-hidden="true"></i></div>
 							<input type="text" id="buscar" placeholder="Buscar..." onfocus="this.placeholder = ''"
-							onblur="this.placeholder = 'Buscar...'">
+							onblur="this.placeholder = 'Buscar...'" 
+							<?php 
+								if (isset($_GET['producto'])) { 
+									echo 'value="'.$_GET['producto'].'"';
+								}
+							?>
+							>
 						</div>
 					</div>
 					<a href="productos.php?categoria=Sublimaci&oacute;n">
@@ -138,6 +150,30 @@
 				</div>
 				<div class="main-contenido-producto-select">
 					<div class="sub-contenido-producto">
+						<?php
+							if (isset($_GET['producto'])) {
+								if ($cont_palabra==0) {
+						?>
+						<div class="sugerencia">No se encontraron resultados para "<?php echo $_GET['producto'];?>"</div>
+						<?php								
+									$sugerencia="";
+									$producto=$_GET['producto'];
+									if ($producto[strlen($producto)-1]=="s") {
+										for ($i=0; $i < strlen($producto); $i++) { 
+											if ($i!=strlen($producto)-1) {
+												$sugerencia.=$producto[$i];
+											}										
+										}								
+						?>
+						<div class="sugerencia-minus">
+							<div class="texto-sugerencia">Prueba</div>
+							<div class="btn-sugerencia" onclick="sugerencia('<?php echo $sugerencia;?>')"><?php echo $sugerencia;?></div></div>
+						<?php
+									}	
+								}
+							}
+							
+						?>
 						<div class="fila-productos">
 							<?php 
 							$cont=0;
