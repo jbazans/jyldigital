@@ -131,3 +131,9 @@ $("#buscar").keypress(function(e){
         window.location.href='productos.php?producto='+document.getElementById("buscar").value;
     }
 });
+
+function mostrar_menu(){
+    $(".opciones-movil").animate({
+        height:'toggle'
+    });
+}

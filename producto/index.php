@@ -26,13 +26,18 @@
 	<script type="text/javascript" src="../js/jquery/jquery-3.2.1.min.js"></script>
 	<link rel="icon" type="image/png" href="../img/icono/icono.png" />
 	<link rel="stylesheet" type="text/css" href="../css/index.css">
-	<link rel="stylesheet" type="text/css" href="../css/producto.css">
+	<link rel="stylesheet" type="text/css" href="../css/producto.css" media="screen and (min-width:501px)">
+	<link rel="stylesheet" type="text/css" href="../css/producto-movil.css" media="screen and (max-width:500px)">
 	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 </head>
-<body onload="animaciones('<?php echo $producto['pro_categoria']; ?>')">
-	<?php
-		cabecera();
-	?>	
+<body onload="animaciones('<?php echo $producto['pro_categoria']; ?>')">	
+	<div class="pantalla-carga">
+		<div class="centro-pantalla">
+			<img src="../img/logo.png" class="img-logo">
+			<div class="mensaje">Cargando recursos...</div>
+			<img src="../img/gif/carga.gif" class="img-carga">
+		</div>
+	</div>
 	<div class="pantalla-compra">
 		<div class="formulario-compra">
 			<div class="cabecera"></div>
@@ -47,6 +52,10 @@
 			<button class="btn-cerrar"><i class="fa fa-times" aria-hidden="true"></i></button>
 		</div>
 	</div>
+	<div class="fondo-blur">
+	<?php
+		cabecera();
+	?>	
 	<div class="main-contenido-producto">
 		<div class="main-contenido-cuerpo">
 			<div class="main-contenido-titulo">Productos&nbsp; | &nbsp;
@@ -227,6 +236,7 @@
 	<?php
 		footer();
 	?>
+	</div>
     <script type="text/javascript" src="../js/producto.js"></script>
      <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaj7YbUU_I7yqWrAnBlfl-CT0icbNthIE">

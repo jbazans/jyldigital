@@ -1,0 +1,362 @@
+.fondo-blur{
+	filter: blur(6px);
+}
+.main-cobertura{
+	display: none;
+	width: 100%;
+	min-width: 1200px;
+	background: rgba(50,50,50,0.7);
+	position: fixed;
+	height: 100%;
+	top: 0px;
+	z-index: 200;
+}
+.main-contenido-cobertura{
+	margin-top: 80px;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+#map {
+    height: 600px;
+    width:800px;
+}
+@media(max-width: 1450px){
+	#map{
+		height: 450px;
+	}
+}
+.btn-cerrar{
+	font-size: 30px;
+}
+.main-contenido-producto{
+	width: 100%;
+	background: #eee;
+}
+.main-contenido-cuerpo{
+	width: 100%;
+}
+.main-contenido-titulo{
+	padding: 10px 10px 10px 10px;
+	width: calc(100% - 20px);
+	font-size: 15px;
+	color: #555;
+}
+.main-contenido-titulo a:hover{
+	text-decoration: underline;
+}
+.main-contenido-fila{
+	display: flex;
+}
+.main-contenido-categorias{
+	width: 250px;
+	background: #eee;
+	display: none;
+}
+.cuerpo-buscador{
+	width: 100%;
+	padding: 5px 5px 5px 5px;
+}
+.input-buscador{
+	padding: 5px 5px 5px 5px;
+	width: calc(100% - 20px);
+	background: white;
+	border-radius: 5px 5px 5px 5px;
+	display: flex;
+}
+.texto-lado{
+	width: 25px;
+	font-size: 25px;
+	transform: rotate(90deg);
+	color: rgb(8,8,150);
+}
+.texto-lado i{
+}
+input[type="text"]{
+	width: calc(100% - 25px);
+	font-size: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-style: none;
+	outline: none;
+	color: #999;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #999;
+}
+.categoria-titulo-main{
+	font-size: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.separador-categorias{
+	width: 100%;
+	height: 1px;
+	background: #ccc;
+}
+.categoria-titulo{
+	width: 230px;
+	font-size: 15px;
+	color: #888;
+	padding: 10px 10px 10px 10px; 
+}
+.categoria-titulo-activo{
+	color: rgb(8,8,150);
+}
+.categoria-titulo:hover{
+	background: rgb(8,8,150);
+	color: white;
+	cursor: pointer;
+}
+.main-contenido-producto-select{
+	width: 100%;
+	background: #eee;
+}
+.sub-contenido-producto{
+	width: 100%;
+}
+.sub-contenido-producto-select{
+	padding: 10px 10px 10px 10px;
+	width: calc(100% - 20px);
+	display: block;
+}
+.select-producto{
+	background: white;
+}
+.fila-productos{	
+	width: 100%;
+	display: flex;
+}
+.producto-contenido{
+	padding: 10px 10px 10px 10px;
+	width: calc(100%/3 - 20px);
+	position: relative;
+}
+.img-producto-categoria{
+	width: 100%;
+	position: relative;
+}
+.descripcion-producto{
+	position: relative;
+	padding: 5px 0px 5px 0px;
+	text-align: center;	
+	font-size: 20px;
+	color: #555;
+	position: relative;
+	background: white;
+}
+.descripcion-texto-producto{
+	font-size: 25px;
+}
+.descripcion-precio{
+}
+.descripcion-oferta{
+	background: red;
+	width: 120px;
+	font-size: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	border-radius: 5px 5px 5px 5px;
+}
+.detalle-producto{
+	width: 100%;
+	position: relative;
+}
+.btn-ver-detalle{
+	width: 100%;
+	background: rgb(8,8,150);
+	color: white;
+	border-style: none;
+	font-size: 30px;
+	padding: 5px 10px 5px 10px;
+	font-family: 'Rubik', sans-serif;
+}
+.sub-contenido1{
+	width: 100%;
+	display: block;
+}
+.sub-contenido-principal{
+	width: 100%;
+	position: relative;
+}
+.img-producto{
+	width: 100%;
+}
+.contenido-botones{
+	position: absolute;
+	top: 0px;
+}
+.contenido-izq{
+	left: 0px;
+}
+.contenido-der{
+	right: 0px;
+}
+.btn-flecha{
+	font-size: 100px;
+	background: none;
+	border-style: none;
+	color: rgb(8,8,150);
+	margin-top: 150px;
+	width: 100%;
+	cursor: pointer;
+	outline: none;
+}
+.cuadros-img{
+	width: 100%;
+	background: #eee;
+	display: flex;
+}
+.cuadro-img{
+	margin: 5px 5px 0px 5px;	
+	padding-bottom: 5px;
+	width: calc((100%/3) - 10px);
+}
+.img-cuadro-ulti{
+	padding-bottom: 0px;
+}
+.img-cuadro{
+	width: 100%;
+	cursor: pointer;
+}
+.sub-contenido3{
+}
+.sub-contenido2{
+	width: 100%;
+}
+.oferta-label{
+	width: 80px;
+	background: red;
+	font-size: 25px;
+	color: white;
+	text-align: center;
+}
+.descripcion-label-adicional{
+	font-size: 15px;
+	color: #555;
+	padding-bottom: 10px;
+}
+.contenido-descripcion{
+}
+.descripcion-titulo{
+	text-align: center;
+	font-size: 30px;
+	color: #555;
+}
+.texto-precio{
+	color: #ac4777;
+}
+.descripcion-label{
+	font-size: 30px;
+	color: #555;
+}
+.descripcion-texto{
+	padding: 5px 5px 5px 5px;
+	font-size: 35px;
+	text-align: center;
+}
+.btn-cobertura{
+	background: none;
+	border-style: none;
+	text-decoration: underline;
+	color: #ac4777;
+	padding: 0px 0px 0px 0px;
+	cursor: pointer;
+}
+.btn-cobertura:hover{
+	color: #610a33;
+}
+.descripcion-label-minus{
+	font-size: 15px;
+	color: #555;
+}
+.descripcion-label-minus2{
+	padding-top: 5px;
+	font-size: 15px;
+	color: #555;
+	color: #ac4777;
+}
+.descripcion-texto2{
+	padding: 0px 5px 0px 5px;
+	font-size: 15px;
+}
+.separador-descripcion{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+	height: 1px;
+	background: #999;
+}
+.contenido-btn-comprar{
+	text-align: center;
+}
+.btn-comprar{
+	font-size: 25px;
+	background: rgb(8,8,150);
+	border-style: none;
+	color: white;
+	padding: 5px 10px 5px 10px;
+}
+.btn-comprar:hover{
+	background: #101b65;
+}
+.pantalla-compra{
+	width: 100%;
+	height: 100%;
+	background: rgba(8,8,150,0.5);
+	padding-top: 100px;
+	position: fixed;
+	top: 0px;
+	display: none;
+	z-index: 160;
+}
+.formulario-compra{
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px 10px 10px 10px;
+	width: 780px;
+	background: white;
+	box-shadow: 0px 0px 10px 0px #000;
+}
+.cabecera{
+	width: 100%;
+	height: 50px;
+}
+.opciones{
+	width: 100%;
+	text-align: center;
+}
+.btn-cancelar{
+	margin-top: 20px;
+	font-size: 25px;
+	background: rgb(8,8,150);
+	border-style: none;
+	color: white;
+	padding: 5px 10px 5px 10px;
+}
+.btn-cancelar:hover{
+	background: #101b65;
+}
+.contenido-recomendaciones{
+	width: calc(100%);
+	background: #eee;
+}
+.titulo-recomendacion{
+	padding: 10px 10px 0px 10px;
+	width: calc(100% - 20px);
+	font-size: 25px;
+	font-family: 'Rubik', sans-serif;
+	color: #555;
+}
+.productos-recomendados{
+	width: 100%;
+	display: block;
+	position: relative;
+}
+.producto-recomendado{
+	margin: 10px 10px 0px 10px;
+	width: calc(100% - 20px);
+	background: white;
+}

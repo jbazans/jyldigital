@@ -8,13 +8,16 @@ function precarga(){
 }
 
 function animaciones(categoria){
+    $(".fondo-blur").css("filter","blur(0px)");
 	$(".pantalla-carga").fadeOut(500);
 	document.getElementById("logo").style.transform="translateY(0px)";
     if (categoria!="destacado") {
         $("#"+categoria).addClass("categoria-titulo-activo");
     }    
-    var height=$(".img-producto-categoria").height()-100;
-    $(".detalle-producto").css("height",height);
+    if (document.documentElement.clientWidth>500) {
+        var height=$(".img-producto-categoria").height()-100;
+        $(".detalle-producto").css("height",height);
+    }
 }
 
 $(".btn-cobertura").click(function(){
@@ -146,3 +149,9 @@ function procesar_compra(id){
 $(".btn-cancelar").click(function(){
     $(".pantalla-compra").fadeOut(200);
 });
+
+function mostrar_menu(){
+    $(".opciones-movil").animate({
+        height:'toggle'
+    });
+}

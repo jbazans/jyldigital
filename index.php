@@ -27,6 +27,7 @@
 			<img src="img/gif/carga.gif" class="img-carga">
 		</div>
 	</div>
+	<img src="img/fondo.jpeg" class="fondo-decoracion">
 	<div class="fondo-blur">
 	<?php
 		cabecera();
@@ -40,8 +41,7 @@
 			<div class="banner-textoanimado" id="texto2">momentos</div>
 			<div class="banner-textoanimado" id="texto3">&#250;nicos</div>
 		</div>					
-	</div>
-	<img src="img/fondo.jpeg" class="fondo-decoracion">
+	</div>	
 	<div class="cuerpo-main">
 		<div class="cuerpo-main-contenido">
 			<div class="cuerpo-main-contenido-titulo">Lo m&#225;s destacado</div>

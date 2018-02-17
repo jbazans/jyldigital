@@ -158,6 +158,8 @@ a{
 	}
 	.nav-main{
 		min-width: 100%;
+		display: fixed;
+		top: 0px;
 	}
 	.nav-main-cuerpo{
 		width: 100%;

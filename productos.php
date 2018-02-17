@@ -55,6 +55,14 @@
 <body onload="animaciones('<?php if (isset($_GET["categoria"])) {
 		echo $categoria;
 	}else{ echo "destacado"; } ?>')">
+	<div class="pantalla-carga">
+		<div class="centro-pantalla">
+			<img src="img/logo.png" class="img-logo">
+			<div class="mensaje">Cargando recursos...</div>
+			<img src="img/gif/carga.gif" class="img-carga">
+		</div>
+	</div>
+	<div class="fondo-blur">
 	<?php
 		cabecera();
 	?>	
@@ -200,6 +208,7 @@
 	<?php
 		footer();
 	?>
+	</div>
 	<script type="text/javascript" src="js/productos.js"></script>
 </body>
 </html>
