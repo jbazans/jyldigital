@@ -8,6 +8,13 @@
 		$cat=quitar_tildes($categoria);
 		if ($con){
 				$sql = "SELECT * FROM PRODUCTOS where pro_cat_bus='".$cat."'";
+				if (isset($_GET['order'])) {
+					if ($_GET['order']=="0") {
+						$sql.=" order by pro_precio_web asc";
+					}else{
+						$sql.=" order by pro_precio_web desc";
+					}					
+				}
 				$result = $con->query($sql);
 				$productos=array();
 				$cont_cate=0;
@@ -20,6 +27,13 @@
 		if (isset($_GET['producto'])) {
 			if ($con){
 					$sql = "SELECT * FROM PRODUCTOS where pro_nombre LIKE '%".$_GET['producto']."%'";
+					if (isset($_GET['order'])) {
+						if ($_GET['order']=="0") {
+							$sql.=" order by pro_precio_web asc";
+						}else{
+							$sql.=" order by pro_precio_web desc";
+						}					
+					}
 					$result = $con->query($sql);
 					$productos=array();
 					$cont_palabra=0;
@@ -31,6 +45,13 @@
 		}else{
 			if ($con){
 					$sql = "SELECT * FROM PRODUCTOS";
+					if (isset($_GET['order'])) {
+						if ($_GET['order']=="0") {
+							$sql.=" order by pro_precio_web asc";
+						}else{
+							$sql.=" order by pro_precio_web desc";
+						}					
+					}
 					$result = $con->query($sql);
 					$productos=array();
 					while($row = $result->fetch_assoc()) {
@@ -102,6 +123,20 @@
 							>
 						</div>
 					</div>
+					<div class="filtro-ordenar">						
+						<select id="select-orden">
+							<option value="0" <?php if (isset($_GET['order'])) {
+								if ($_GET['order']=="0") {
+									echo "selected";
+								}
+							} ?>>Menor precio</option>
+							<option value="1" <?php if (isset($_GET['order'])) {
+								if ($_GET['order']=="1") {
+									echo "selected";
+								}
+							} ?>>Mayor precio</option>
+						</select>
+					</div>	
 					<a href="productos.php?categoria=Sublimaci&oacute;n">
 						<div class="categoria-titulo" id="Sublimaci&oacute;n">
 							Sublimaci&oacute;n

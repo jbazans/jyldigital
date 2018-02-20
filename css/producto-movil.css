@@ -4,7 +4,6 @@
 .main-cobertura{
 	display: none;
 	width: 100%;
-	min-width: 1200px;
 	background: rgba(50,50,50,0.7);
 	position: fixed;
 	height: 100%;
@@ -12,15 +11,14 @@
 	z-index: 200;
 }
 .main-contenido-cobertura{
-	margin-top: 80px;
-	width: 800px;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 10%;
+	margin-top: 50px;
+	width: 80%;
 	text-align: center;
 }
 #map {
-    height: 600px;
-    width:800px;
+    height: 250px;
+    width:100%;
 }
 @media(max-width: 1450px){
 	#map{
@@ -115,6 +113,16 @@ input[type="text"]{
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #999;
+}
+.filtro-ordenar{
+	padding: 10px 10px 10px 10px;
+	width: calc(100% - 20px);
+}
+#select-orden{
+	width: 100%;
+	font-size: 15px;
+	color: #333;
+	border-style: 5px 5px 5px 5px;
 }
 .categoria-titulo-main{
 	font-size: 15px;

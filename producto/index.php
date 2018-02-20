@@ -75,6 +75,20 @@
 							onblur="this.placeholder = 'Buscar...'">
 						</div>
 					</div>
+					<div class="filtro-ordenar">						
+						<select id="select-orden">
+							<option value="0" <?php if (isset($_GET['order'])) {
+								if ($_GET['order']=="0") {
+									echo "selected";
+								}
+							} ?>>Menor precio</option>
+							<option value="1" <?php if (isset($_GET['order'])) {
+								if ($_GET['order']=="1") {
+									echo "selected";
+								}
+							} ?>>Mayor precio</option>
+						</select>
+					</div>	
 					<a href="../productos.php?categoria=Sublimaci&oacute;n">
 						<div class="categoria-titulo" id="Sublimaci&oacute;n">
 							Sublimaci&oacute;n

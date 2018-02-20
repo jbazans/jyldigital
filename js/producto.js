@@ -7,7 +7,10 @@ function precarga(){
 	},2000);
 }
 
+var cate="";
 function animaciones(categoria){
+    console.log(categoria);
+    cate=categoria;
     $(".fondo-blur").css("filter","blur(0px)");
 	$(".pantalla-carga").fadeOut(500);
 	document.getElementById("logo").style.transform="translateY(0px)";
@@ -44,10 +47,18 @@ function initMap() {
     var image = {
           url: '../img/icono/delivery.png'
     };
-    var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
-          center: centro
-    });
+    var map;
+    if (document.documentElement.clientWidth>500) {
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 13,
+            center: centro
+        });
+    }else{
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 11,
+            center: centro
+        });
+    }    
 
     var marker = new google.maps.Marker({
         position: ceres,
@@ -170,4 +181,13 @@ $(".categorias-menu").click(function(){
     $(".main-contenido-categorias").animate({
         height:'toggle'
     });
+});
+
+$("#select-orden").change(function(){
+    var url = "../productos.php";
+    if (cate=="destacado") {
+        window.location.href=url+"?order="+$("#select-orden").val();
+    }else{
+        window.location.href=url+"?categoria="+cate+"&order="+$("#select-orden").val();
+    }   
 });

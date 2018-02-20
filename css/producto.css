@@ -114,6 +114,16 @@ input[type="text"]{
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #999;
 }
+.filtro-ordenar{
+	padding: 10px 10px 10px 10px;
+	width: calc(100% - 20px);
+}
+#select-orden{
+	width: 100%;
+	font-size: 15px;
+	color: #333;
+	border-style: 5px 5px 5px 5px;
+}
 .categoria-titulo-main{
 	font-size: 15px;
 	padding-top: 10px;
