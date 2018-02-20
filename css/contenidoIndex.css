@@ -7,12 +7,28 @@
 	min-width: 1200px;
 	position: relative;
 }
+.contenedor-img{
+	width: 100%;
+}
+.img-banner{
+	width: 100%;
+	position: relative;
+}
 .textosanimados{
 	margin-left: calc((100% - 1000px)/2);
 	width: 1000px;
 	position: absolute;
-	top: 70px;
 	text-align: right;
+	overflow: hidden;
+	display: flex;
+}
+.gif-animado{
+	width: 150px;
+}
+.img-gif-oferta{
+	width: 100%;
+	transition: 2s;
+	opacity: 0;
 }
 @media(max-width: 1000px){
 	.textosanimados{
@@ -23,11 +39,8 @@
 		text-align: right;
 	}
 }
-.img-banner{
-	width: 100%;
-	min-width: 1200px;
-	height: auto;
-	position: relative;
+.textos-animados{
+	width: calc(100% - 150px);
 }
 .banner-textoanimado{	
 	font-size: 50px;

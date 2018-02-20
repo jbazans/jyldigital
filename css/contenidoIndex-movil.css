@@ -31,9 +31,21 @@
 	position: absolute;
 	text-align: right;
 	overflow-x: hidden;
+	display: flex;
+}
+.textos-animados{
+	width: 80%;
+}
+.gif-animado{
+	width: 20%;
+}
+.img-gif-oferta{
+	width: 100%;
+	transition: 2s;
+	opacity: 0;
 }
 .banner-textoanimado{
-	font-size: 30px;
+	font-size: 25px;
 	color: #ac4777;
 }
 #texto1,#texto2,#texto3{

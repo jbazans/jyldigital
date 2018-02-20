@@ -37,9 +37,14 @@
 			<img src="img/regalo.jpg" class="img-banner">
 		</div>			
 		<div class="textosanimados">
-			<div class="banner-textoanimado" id="texto1">Crea</div>
-			<div class="banner-textoanimado" id="texto2">momentos</div>
-			<div class="banner-textoanimado" id="texto3">&#250;nicos</div>
+			<div class="gif-animado">
+				<img src="img/icono/oferta.png" class="img-gif-oferta">
+			</div>
+			<div class="textos-animados">
+				<div class="banner-textoanimado" id="texto1">Crea</div>
+				<div class="banner-textoanimado" id="texto2">momentos</div>
+				<div class="banner-textoanimado" id="texto3">&#250;nicos</div>
+			</div>			
 		</div>					
 	</div>	
 	<div class="cuerpo-main">

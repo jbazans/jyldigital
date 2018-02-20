@@ -9,6 +9,8 @@ function precarga(){
 function animaciones(){
 	$(".fondo-blur").css("filter","blur(0px)");
 	$(".pantalla-carga").fadeOut(500);
+	var top=$(".img-banner").width()*250/2000;
+	$(".textosanimados").css("top",top);	
 	document.getElementById("logo").style.transform="translateY(0px)";
 	var height=$(".img-producto").height()-100;
 	if (document.documentElement.clientWidth>500) {
@@ -18,6 +20,7 @@ function animaciones(){
 	$(".img-banner").css("margin-left","-"+margin);
 	setTimeout('efectoTexto1()',2000);
 	setInterval('ocultarTexto()',10000);
+	setTimeout('efectoferta()',2000);
 }
 
 function ocultarTexto(){
@@ -28,6 +31,22 @@ function ocultarTexto(){
 	document.getElementById("texto2").style.transform="translateX(100px)";
 	document.getElementById("texto3").style.transform="translateX(100px)";
 	setTimeout('efectoTexto1()',1000);
+}
+
+function efectoferta(){	
+	$(".img-gif-oferta").css("opacity","1");
+	$(".img-gif-oferta").css("transform","translateY(25px)");	
+	setTimeout('ocultaroferta()',6000);
+}
+
+function ocultaroferta(){	$(".img-gif-oferta").css("opacity","0");
+	$(".img-gif-oferta").css("transform","translateY(50px)");
+	setTimeout('acomodaroferta()',2000);
+}
+
+function acomodaroferta(){	
+	$(".img-gif-oferta").css("transform","translateY(0px)");
+	setTimeout('efectoferta()',1000);
 }
 
 function efectoTexto1(){
@@ -77,4 +96,10 @@ function mostrar_menu(){
 		height:'toggle'
 	});
 }
+
+$(window).resize(function() {
+	var ancho=$(".img-banner").width();
+	var top=ancho*250/2000;
+	$(".textosanimados").css("top",top);
+});
 
