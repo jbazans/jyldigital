@@ -10,8 +10,10 @@
 				$sql = "SELECT * FROM PRODUCTOS where pro_cat_bus='".$cat."'";
 				$result = $con->query($sql);
 				$productos=array();
+				$cont_cate=0;
 				while($row = $result->fetch_assoc()) {
 					array_push($productos, $row);
+					$cont_cate++;
 				}
 		}
 	}else{
@@ -171,6 +173,16 @@
 						<?php
 									}	
 								}
+							}
+							
+						?>
+						<?php
+							if (isset($_GET['categoria'])) {
+								if ($cont_cate==0) {
+						?>
+						<div class="sugerencia">Contenido no disponible por el momento</div>
+						<?php		
+								}										
 							}
 							
 						?>
