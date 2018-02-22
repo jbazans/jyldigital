@@ -221,7 +221,7 @@
 						</div>
 					</div>	
 					<div class="contenido-recomendaciones">
-						<div class="titulo-recomendacion">B&uacute;squedas similares</div>
+						<div class="titulo-recomendacion">Ofertas actuales</div>
 						<div class="productos-recomendados">
 						<?php
 						if ($con){

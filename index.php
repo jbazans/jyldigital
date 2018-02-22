@@ -125,17 +125,17 @@
 			<div class="cuerpo-servicios-titulo">Nuestros servicios</div>
 			<div class="cuerpo-contenedor-servicios">
 				<div class="cuerpo-servicio">
+					<img src="img/servicios/publicidad.jpg" class="img-servicio">
+					Publicidad en General
+				</div>
+				<div class="cuerpo-servicio">
 					<img src="img/servicios/regalos.jpg" class="img-servicio">
 					Regalos personalizados
 				</div>
 				<div class="cuerpo-servicio">
 					<img src="img/servicios/imprenta.jpg" class="img-servicio">
 					Imprenta en General
-				</div>
-				<div class="cuerpo-servicio">
-					<img src="img/servicios/publicidad.jpg" class="img-servicio">
-					Publicidad digital
-				</div>
+				</div>				
 				<div class="cuerpo-servicio">
 					<img src="img/servicios/serviciosweb.jpg" class="img-servicio">
 					Servicios web
