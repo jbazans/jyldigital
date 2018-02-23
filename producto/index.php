@@ -21,6 +21,7 @@
 	<meta name="description" content="Regalos personalizados">
   	<meta name="keywords" content="Imprenta, Sublimacion, Publicidad">
   	<meta name="author" content="JyL Publimprenta">
+  	<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="../js/jquery/jquery-3.2.1.min.js"></script>
@@ -75,20 +76,6 @@
 							onblur="this.placeholder = 'Buscar...'">
 						</div>
 					</div>
-					<div class="filtro-ordenar">						
-						<select id="select-orden">
-							<option value="0" <?php if (isset($_GET['order'])) {
-								if ($_GET['order']=="0") {
-									echo "selected";
-								}
-							} ?>>Menor precio</option>
-							<option value="1" <?php if (isset($_GET['order'])) {
-								if ($_GET['order']=="1") {
-									echo "selected";
-								}
-							} ?>>Mayor precio</option>
-						</select>
-					</div>	
 					<a href="../productos.php?categoria=Sublimaci&oacute;n">
 						<div class="categoria-titulo" id="Sublimaci&oacute;n">
 							Sublimaci&oacute;n

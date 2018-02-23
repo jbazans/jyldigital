@@ -1,0 +1,186 @@
+body,html{
+	margin: 0px 0px 0px 0px;
+}
+body{
+	background: #eee;
+}
+.pantalla-carga{
+	width: 100%;
+	height: 100%;
+	background: rgba(50,50,50,0.5);
+	position: fixed;
+	top: 0px;
+	z-index: 100;
+	padding-top: 100px;
+	display: none;
+}
+.cuadro-carga{
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+	text-align: center;
+}
+.img-carga{
+	width: 200px;
+}
+.pantalla-sugerencia{
+	width: 100%;
+	height: 100%;
+	background: rgba(50,50,50,0.5);
+	position: fixed;
+	top: 0px;
+	z-index: 100;
+	padding-top: 100px;
+	display: none;
+}
+.cuadro-sugerencia{
+	margin-left: auto;
+	margin-right: auto;
+	width: 280px;
+	text-align: center;
+	background: white;
+	padding: 20px 10px 20px 10px;
+	font-family: sans-serif;
+}
+.titulo-sugerencia{
+	font-size: 20px;
+	padding-bottom: 5px;
+}
+.btns{
+	display: flex;
+}
+.der{
+	text-align: right;
+	width: 50%;
+}
+.izq{
+	text-align: left;
+	width: 50%;
+}
+.btn-insertar{
+	margin-top: 5px;
+	border-style: none;
+	font-size: 20px;
+	background: rgb(8,8,150);
+	padding: 5px 10px 5px 10px;
+	color: white;
+	cursor: pointer;
+	margin-right: 2px;
+}
+.btn-insertar:hover{
+	background: rgb(10,10,60);
+}
+.btn-cancelar{
+	margin-left: 2px;
+	margin-top: 5px;
+	border-style: none;
+	font-size: 20px;
+	background: #ccc;
+	padding: 5px 10px 5px 10px;
+	color: #333;
+	cursor: pointer;
+}
+.btn-cancelar:hover{
+	background: #888;
+}
+.cuerpo-modulo-main{
+	width: 100%;
+	display: flex;
+}
+.panel-lateral{
+	width: 250px;
+	background: rgb(8,8,150);
+	height: 500px;
+	font-family: sans-serif;
+}
+.panel-contenido{
+	padding: 10px 10px 10px 10px;
+	width: calc(100% - 270px);
+	font-family: sans-serif;
+}
+.img-logo{
+	margin-left: 50px;
+	margin-top: 10px;
+	width: calc(100% - 100px);
+}
+.opciones-admin{
+	margin-left: 10px;
+	width: calc(100% - 20px);
+}
+a{
+	text-decoration: none;
+}
+.opcion{
+	padding: 10px 10px 10px 10px;
+	color: white;
+	width: calc(100% - 20px);	
+}
+.opcion:hover{
+	background: rgb(10,10,60);
+}
+.titulo-panel{
+	background: white;
+	padding: 10px 10px 10px 10px;
+	width: calc(100% - 20px);
+	font-size: 20px;
+	color: #333;
+}
+.contenido-panel{
+	margin-top: 10px;
+	background: white;
+	padding: 10px 20px 10px 20px;
+	width: calc(100% - 40px);
+}
+.fila-contenido{
+	width: 100%;
+	margin-bottom: 10px;
+}
+.label-texto{
+	margin-bottom: 5px;
+	display: flex;
+}
+.solo-texto{
+	font-weight: bold;
+	margin-right: 10px;
+}
+.btn-add{
+	padding-top: 2px;
+	padding-bottom: 4px;
+	font-size: 15px;
+}
+input[type="text"]{
+	padding: 3px 5px 3px 5px;
+	width: 500px;
+}
+input[type="number"]{
+	padding: 3px 5px 3px 5px;
+	width: 200px;
+}
+#estado,#categoria{
+	width: 200px;
+	padding: 3px 5px 3px 5px;
+}
+.img-imagen{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999;
+	width: 98px;
+	margin-right: 10px;
+}
+.fila-btn{
+	width: 100%;
+}
+.btn-guardar{
+	border-style: none;
+	font-size: 20px;
+	background: rgb(8,8,150);
+	padding: 5px 10px 5px 10px;
+	color: white;
+	cursor: pointer;
+}
+.btn-guardar:hover{
+	background: rgb(10,10,60);
+}
+.form-images{
+	display: none;
+}
