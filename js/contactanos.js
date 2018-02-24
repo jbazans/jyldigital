@@ -7,9 +7,12 @@ function precarga(){
 }
 
 function animaciones(){
+    $(".fondo-blur").css("filter","blur(0px)");
 	$(".pantalla-carga").fadeOut(500);
 	document.getElementById("logo").style.transform="translateY(0px)";
-
+    var ancho=$(".img-con-bottom").width();
+    var top=ancho*250/2000;
+    $(".form-contactanos").css("top",top);
 }
 
 $(window).scroll(function () {
@@ -48,6 +51,7 @@ function sendMail(){
             nombre:document.getElementById("nombre").value,
             email:document.getElementById("email").value,
             celular:document.getElementById("celular").value,
+            asunto:document.getElementById("asunto").value,
             consulta:document.getElementById("consulta").value
         },
         success:function(data){
@@ -56,6 +60,7 @@ function sendMail(){
                 document.getElementById("nombre").value="";
                 document.getElementById("email").value="";
                 document.getElementById("celular").value="";
+                document.getElementById("asunto").value="";
                 document.getElementById("consulta").value="";
             }else{
                 alert("Ocurrio un error, intentelo m&aacute;s tarde.");
@@ -70,3 +75,10 @@ function mostrar_menu(){
         height:'toggle'
     });
 }
+
+$(window).resize(function() {
+    var ancho=$(".img-con-bottom").width();
+    var top=ancho*200/2000;
+    $(".form-contactanos").css("top",top);
+});
+

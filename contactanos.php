@@ -22,71 +22,102 @@
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script|Permanent+Marker" rel="stylesheet">
 </head>
 <body onload="animaciones()">
+	<div class="pantalla-carga">
+		<div class="centro-pantalla">
+			<img src="img/logo.png" class="img-logo">
+			<div class="mensaje">Cargando recursos...</div>
+			<img src="img/gif/carga.gif" class="img-carga">
+		</div>
+	</div>
+	<div class="fondo-blur">
 	<?php
 		cabecera();
 	?>	
-	<div class="separador-contactanos"></div>
 	<div class="contactanos-cuerpo-main">
+		<div class="contenedor-img">
+			<img src="img/contactanos-top.jpg" class="img-con-top">
+		</div>
 		<div class="cuerpo-contactanos">
-			<div class="titulo-contactanos">¿Tienes alguna duda?</div>
-			<div class="subtitulo-contactanos">Comun&iacute;cate con nosotros por alguno de los siguientes medios.</div>
 			<div class="medio-contacto">
-				<div class="titulo-contacto">Redes sociales</div>
 				<div class="fila-iconos">
 					<div class="icono-red">
+						<a href="#" target="_blank"><img src="img/social/celular.png" class="img-social-contacto"></a>	
+						<div class="texto-icono-red">970 653 130</div>
+					</div>
+					<div class="icono-red">
+						<a href="https://www.youtube.com/channel/UCOuWtGP7agkGZaJBnjRVcgw" target="_blank"><img src="img/social/whatsapp.png" class="img-social-contacto"></a>	
+						<div class="texto-icono-red">995 854 731<br>970 653 130</div>
+					</div>
+					<div class="icono-red">
 						<a href="https://www.facebook.com/JyLPublimprenta/" target="_blank"><img src="img/social/facebook.png" class="img-social-contacto"></a>	
+						<div class="texto-icono-red">/Jyl Publimprenta</div>
 					</div>
 					<div class="icono-red">
-						<a href="https://www.youtube.com/channel/UCOuWtGP7agkGZaJBnjRVcgw" target="_blank"><img src="img/social/youtube.png" class="img-social-contacto"></a>	
+						<a href="#" target="_blank"><img src="img/social/correo.png" class="img-social-contacto"></a>	
+						<div class="texto-icono-red">jyl_publimprenta<br>@hotmail.com<br>jylimprenta@gmail.com</div>
 					</div>
 					<div class="icono-red">
-						<a href="#" target="_blank"><img src="img/social/instagram.png" class="img-social-contacto"></a>	
-					</div>
-					<div class="icono-red">
-						<a href="#" target="_blank"><img src="img/social/twitter.png" class="img-social-contacto"></a>	
+						<a href="#" target="_blank"><img src="img/social/direccion.png" class="img-social-contacto"></a>	
+						<div class="texto-icono-red">Av. 9 de setiembre<br>Mz. K1 lote 54<br>Jicamarca - Huachipa</div>
 					</div>
 				</div>
 			</div>
-			<div class="separador-medios"></div>
-			<div class="medio-contacto">
-				<div class="titulo-contacto">Nuestra tienda f&iacute;sica</div>
-				<div id="map">
-				</div>
-				<div class="separador-contacto"></div>
-				<div class="fila-datos">
-					<div class="dato"><i class="fa fa-map-marker" aria-hidden="true"></i> Av. 9 de setiembre mz. k1 lote 53 - Jicamarca, Anexo 8</div>
-					<div class="dato dato-web"><i class="fa fa-mobile" aria-hidden="true"></i> 970 653 130  -  <i class="fa fa-whatsapp" aria-hidden="true"></i> 970 653 130 / 995 854 731</div>
-					<div class="dato dato-movil"><i class="fa fa-mobile" aria-hidden="true"></i> 970 653 130</div>
-					<div class="dato dato-movil"><i class="fa fa-whatsapp" aria-hidden="true"></i> 970 653 130 / 995 854 731</div>
-					<div class="dato"><i class="fa fa-envelope-o" aria-hidden="true"></i> jylimprenta@gmail.com</div>
-				</div>
-			</div>
-			<div class="separador-medios"></div>
-			<div class="medio-contacto">
-				<div class="titulo-contacto">Formulario para consultas</div>
-				<div class="fila-datos-form">
-					<div class="columna-contacto">
-						<div class="columna-mitad1">
-							<div class="texto-label">Nombre completo</div>
-							<input type="text" id="nombre" placeholder="Nombres y apellidos">
-							<div class="separador-label"></div>
-							<div class="texto-label">E-mail</div>
-							<input type="text" id="email" placeholder="Ingrese su e-mail">
-							<div class="separador-label"></div>
-							<div class="texto-label">Celular (opcional)</div>
-							<input type="text" id="celular" placeholder="Ingrese su n&uacute;mero">
+			<div class="separador-medios"></div>			
+		</div>
+	</div>
+	<div class="medio-contacto">
+		<div id="map">
+		</div>
+	</div>
+	<div class="contactanos-cuerpo-main">
+		<div class="contenedor-img">
+			<img src="img/contactanos-bottom.jpg" class="img-con-bottom">
+			<div class="form-contactanos">
+				<div class="lado-vacio"></div>
+				<div class="lado-form">
+					<div class="fila">
+						<div class="lado">
+							<div class="lado-icono"><i class="fa fa-user" aria-hidden="true"></i></div>
+							<div class="lado-input">
+								<input type="text" id="nombre" placeholder="Nombres y apellidos">
+							</div>
 						</div>
-						<div class="columna-mitad2">
-							<div class="texto-label">Dejanos tu consulta</div>
-							<textarea class="text-area" id="consulta"></textarea>
+						<div class="separador-lado"></div>
+						<div class="lado">
+							<div class="lado-icono"><i class="fa fa-phone" aria-hidden="true"></i></div>
+							<div class="lado-input">
+								<input type="text" id="celular" placeholder="Celular / Tel&eacute;fono">
+							</div>
 						</div>
 					</div>
-					<div class="cuerpo-btn">
+					<div class="separador-filas"></div>
+					<div class="fila">
+						<div class="lado-icono"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+						<div class="lado-input">
+							<input type="text" id="email" placeholder="Correo electr&oacute;nico">
+						</div>
+					</div>
+					<div class="separador-filas"></div>
+					<div class="fila">
+						<div class="lado-icono"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+						<div class="lado-input">
+							<input type="text" id="asunto" placeholder="Asunto">
+						</div>
+					</div>
+					<div class="separador-filas"></div>
+					<div class="fila">
+						<div class="lado-icono text-area-in"><i class="fa fa-comment" aria-hidden="true"></i></div>
+						<textarea placeholder="Mensaje" id="consulta"></textarea>
+					</div>
+					<div class="separador-filas"></div>
+					<div class="fila-btn">
 						<button class="btn-enviar" onclick="sendMail()">Enviar</button>
 					</div>
+
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<?php
 		footer();

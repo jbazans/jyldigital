@@ -148,7 +148,7 @@
 		<div class="cuerpo-servicios">
 			<div class="cuerpo-contenedor-servicios cuerpo-movil-servicios">
 				<div class="cuerpo-servicio">
-					<a href="https://www.facebook.com/JyLPublimprenta/" target="_blank"><img src="img/social/facebook.png" class="img-social"></a>
+					<a href="https://www.facebook.com/JyLPublimprenta/" target="_blank"><img src="img/social/facebook1.png" class="img-social"></a>
 				</div>
 				<div class="cuerpo-servicio">
 					<a href="https://www.youtube.com/channel/UCOuWtGP7agkGZaJBnjRVcgw" target="_blank"><img src="img/social/youtube.png" class="img-social"></a>					

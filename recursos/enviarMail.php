@@ -20,11 +20,12 @@ $mail = new PHPMailer(true);
    	$mail->SMTPDebug='DEBUG_OFF';
 $mail->setFrom('jyl_master@jyldigital.com', 'WebMaster');
 $mail->addAddress('jylimprenta@gmail.com', 'Administrador');
-$mail->Subject  = 'Nueva consulta desde Web';
+$mail->Subject  = $_GET['asunto'];
 $mail->Body     = ''.
 '<h1>Cliente: '.$_GET['nombre'].'</h1>'.
 '<h3>E-mail: '.$_GET['email'].'</h3>'.
 '<h3>Celular: '.$_GET['celular'].'</h3>'.
+'<h3>Asunto: '.$_GET['asunto'].'</h3>'.
 '<h3>Consulta:</h3>'.
 '<p>'.$_GET['consulta'].'</p>'
 ;
