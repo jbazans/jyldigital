@@ -38,6 +38,9 @@ function efectoferta(){
 	$(".img-gif-oferta").animate({
 		width:"100%"
 	});
+	$(".img-gif-oferta").animate({
+		margin:"0%"
+	});
 	setTimeout('ocultaroferta()',6000);
 }
 
@@ -45,6 +48,9 @@ function ocultaroferta(){
 	$(".img-gif-oferta").css("opacity","0");
 	$(".img-gif-oferta").animate({
 		width:"0%"
+	});
+	$(".img-gif-oferta").animate({
+		margin:"50%"
 	});
 	setTimeout('acomodaroferta()',2000);
 }
@@ -107,3 +113,8 @@ $(window).resize(function() {
 	$(".textosanimados").css("top",top);
 });
 
+$("div.nav-contenido").on('mouseenter',function(){
+	$("#selector-"+this.id).css("background","rgb(8,8,150)");
+}).on('mouseleave',function(){
+	$("#selector-"+this.id).css("background","rgb(255,255,255)");
+});

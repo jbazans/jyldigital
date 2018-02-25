@@ -20,6 +20,8 @@ $mail = new PHPMailer(true);
    	$mail->SMTPDebug='DEBUG_OFF';
 $mail->setFrom('jyl_master@jyldigital.com', 'WebMaster');
 $mail->addAddress('jylimprenta@gmail.com', 'Administrador');
+$mail->addAddress('jbazans@uni.pe', 'Administrador');
+$mail->addAddress('jyl_publimprenta@hotmail.com', 'Administrador');
 $mail->Subject  = $_GET['asunto'];
 $mail->Body     = ''.
 '<h1>Cliente: '.$_GET['nombre'].'</h1>'.

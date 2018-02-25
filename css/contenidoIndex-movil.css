@@ -41,6 +41,7 @@
 }
 .img-gif-oferta{
 	width: 100%;
+	margin: 50%
 	transition: 2s;
 	opacity: 0;
 }

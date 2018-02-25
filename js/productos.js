@@ -2,6 +2,7 @@ window.onLoad=precarga();
 
 function precarga(){	
 	$("#productos").addClass("nav-contenido-activo");
+    $("#selector-productos").addClass("selector-activo");
 	setTimeout(function(){
 		$(".mensaje").text("Casi listo...");
 	},2000);
@@ -172,4 +173,10 @@ $("#select-orden").change(function(){
     }else{
         window.location.href=url+"?categoria="+cate+"&order="+$("#select-orden").val();
     }    
+});
+
+$("div.nav-contenido").on('mouseenter',function(){
+    $("#selector-"+this.id).css("background","rgb(8,8,150)");
+}).on('mouseleave',function(){
+    $("#selector-"+this.id).css("background","rgb(255,255,255)");
 });

@@ -27,7 +27,7 @@
 }
 .img-gif-oferta{
 	width: 0%;
-	margin-left: 50%;
+	margin: 50%;
 	transition: 2s;
 	opacity: 0;
 }

@@ -14,26 +14,30 @@
 		<div class="nav-main-cuerpo">
 			<div class="centrar">				
 				<a href="#">
+					<div class="selector" id="selector-nosotros"></div>
 					<div class="nav-contenido" id="nosotros">
 						<div class="nav-contenido-texto">Nosotros</div>
 					</div>
 				</a>
 				<a href="productos.php">
+					<div class="selector" id="selector-productos"></div>
 					<div class="nav-contenido" id="productos">
 						<div class="nav-contenido-texto">Productos</div>
 					</div>
 				</a>
-				<a href="index.php">
+				<a href="index.php">					
 					<div class="nav-contenido-logo">
 						<img src="img/icono/icono.png" class="img-icono" id="logo" title="Inicio">
 					</div>
 				</a>	
 				<a href="galeria.php">
+					<div class="selector" id="selector-galeria"></div>
 					<div class="nav-contenido" id="galeria">
 						<div class="nav-contenido-texto">Galer&#237;a</div>
 					</div>
 				</a>			
 				<a href="contactanos.php">
+					<div class="selector" id="selector-contactanos"></div>
 					<div class="nav-contenido" id="contactanos">
 						<div class="nav-contenido-texto">Cont&#225;ctanos</div>
 					</div>

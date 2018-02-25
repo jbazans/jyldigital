@@ -2,6 +2,7 @@ window.onLoad=precarga();
 
 function precarga(){	
 	$("#galeria").addClass("nav-contenido-activo");
+	$("#selector-galeria").addClass("selector-activo");
 	setTimeout(function(){
 		$(".mensaje").text("Casi listo...");
 	},2000);
@@ -29,3 +30,9 @@ function mostrar_menu(){
 		height:'toggle'
 	});
 }
+
+$("div.nav-contenido").on('mouseenter',function(){
+	$("#selector-"+this.id).css("background","rgb(8,8,150)");
+}).on('mouseleave',function(){
+	$("#selector-"+this.id).css("background","rgb(255,255,255)");
+});

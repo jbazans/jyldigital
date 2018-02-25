@@ -23,6 +23,14 @@
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script|Permanent+Marker" rel="stylesheet">
 </head>
 <body onload="animaciones()">
+	<div class="pantalla-carga">
+		<div class="centro-pantalla">
+			<img src="img/icono/icono.png" class="img-logo">
+			<div class="mensaje">Cargando recursos...</div>
+			<img src="img/gif/carga.gif" class="img-carga">
+		</div>
+	</div>
+	<div class="fondo-blur">
 	<?php
 		cabecera();
 	?>	
@@ -62,6 +70,7 @@
 	<?php
 		footer();
 	?>
+	</div>
 	<script type="text/javascript" src="js/galeria.js"></script>
 </body>
 </html>

@@ -119,6 +119,7 @@ input[type="text"]{
 	width: calc(100% - 20px);
 }
 #select-orden{
+	padding: 5px 5px 5px 5px;
 	width: 100%;
 	font-size: 15px;
 	color: #333;
