@@ -23,12 +23,12 @@
 <body onload="animaciones()">
 	<div class="pantalla-carga">
 		<div class="centro-pantalla">
-			<img src="img/logo.png" class="img-logo">
+			<img src="img/icono/icono.png" class="img-logo">
 			<div class="mensaje">Cargando recursos...</div>
 			<img src="img/gif/carga.gif" class="img-carga">
 		</div>
 	</div>
-	<img src="img/fondo.jpeg" class="fondo-decoracion">
+	<img src="img/fondo.jpg" class="fondo-decoracion">
 	<div class="fondo-blur">
 	<?php
 		cabecera();

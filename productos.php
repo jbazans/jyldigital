@@ -86,7 +86,7 @@
 	}else{ echo "destacado"; } ?>')">
 	<div class="pantalla-carga">
 		<div class="centro-pantalla">
-			<img src="img/logo.png" class="img-logo">
+			<img src="img/icono/icono.png" class="img-logo">
 			<div class="mensaje">Cargando recursos...</div>
 			<img src="img/gif/carga.gif" class="img-carga">
 		</div>
