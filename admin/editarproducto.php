@@ -21,7 +21,7 @@
 	<link rel="icon" type="image/png" href="../img/icono/icono.png" />
 	<link rel="stylesheet" type="text/css" href="../css/admin-main.css">
 </head>
-<body onload="ajustar()">
+<body onload="ajuste_editar('<?php echo $_GET['id']; ?>')">
 	<div class="pantalla-carga">
 		<div class="cuadro-carga">
 			<img src="../img/gif/carga.gif" class="img-carga">
@@ -53,14 +53,14 @@
 			<img src="../img/icono/icono.png" class="img-logo">
 			<div class="opciones-admin">
 				<a href=""><div class="opcion">Inicio</div></a>
-				<a href="main.php"><div class="opcion opc-active">Agregar productos</div></a>
-				<a href="productos.php"><div class="opcion">Editar producto</div></a>
+				<a href="main.php"><div class="opcion">Agregar productos</div></a>
+				<a href="productos.php"><div class="opcion opc-active">Editar producto</div></a>
 				<a href="../"><div class="opcion">Ver mi web</div></a>
 				<a href="../recursos/LogOut.php"><div class="opcion">Salir</div></a>
 			</div>
 		</div>
 		<div class="panel-contenido">
-			<div class="titulo-panel"><strong>Agregar nuevo producto</strong></div>
+			<div class="titulo-panel"><strong>Editar producto</strong></div>
 			<div class="contenido-panel">
 				<div class="fila-contenido">
 					<div class="label-texto">
@@ -111,11 +111,17 @@
 				</div>
 				<div class="fila-contenido">
 					<div class="label-texto">
-						<div class="solo-texto">Nombre de la carpeta</div>
-						<div class="aclaracion">(carpeta en la que se guardar&aacute;n las im&aacute;genes)</div>
+						<div class="solo-texto">Rutas de las im&aacute;genes</div>
+						<div class="aclaracion"></div>
 					</div>
 					<div class="input-texto">
-						<input type="text" id="url">
+						<input type="text" id="url1">
+					</div>	
+					<div class="input-texto second">
+						<input type="text" id="url2">
+					</div>	
+					<div class="input-texto second">
+						<input type="text" id="url3">
 					</div>	
 				</div>
 				<div class="fila-contenido">
@@ -148,9 +154,9 @@
 					</div>
 					<div class="input-texto">
 						<select id="categoria">
-							<option value="Sublimaci&oacute;n">Sublimaci&oacute;n</option>
+							<option value="Sublimacion">Sublimacion</option>
 							<option value="Imprenta">Imprenta</option>
-							<option value="Gigantograf&iacute;a">Gigantograf&iacute;a</option>
+							<option value="Gigantografia">Gigantografia</option>
 							<option value="Merchandising">Merchandising</option>
 							<option value="Ploteos">Ploteos</option>
 							<option value="Estampados">Estampados</option>
@@ -178,13 +184,15 @@
 					</div>	
 				</div>
 				<div class="fila-btn">
-					<button class="btn-guardar" onclick="guardar_producto()">Guardar</button>
+					<button class="btn-guardar" onclick="modificar_producto()">Modificar</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<form enctype="multipart/form-data" action="../recursos/guardarImagenes.php" method="POST" class="form-images">
-		<input type="text" name="path" id="path">
+	<form enctype="multipart/form-data" action="../recursos/modificarImagenes.php" method="POST" class="form-images">
+		<input type="text" name="path1" id="path1">
+		<input type="text" name="path2" id="path2">
+		<input type="text" name="path3" id="path3">
 		<input type="file" name="img1" id="imagen1">
 		<input type="file" name="img2" id="imagen2">
 		<input type="file" name="img3" id="imagen3">

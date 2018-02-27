@@ -2,7 +2,6 @@
 	if (isset($_POST['nombre'])) {
 		include("conexion.php");
 		include("funciones.php");
-		$cat_sin_tilde=quitar_tildes($_POST['categoria']);
 		$sql="insert into PRODUCTOS".
 		"(pro_nombre,pro_descripcion,pro_precio_web,pro_precio_tienda,".
 		"pro_img1,pro_img2,pro_img3,pro_estado,pro_categoria,pro_cat_bus,pro_oferta,pro_sonido) values (".
@@ -15,7 +14,7 @@
 		"'img/productos/".$_POST['url']."/03.jpg',".
 		"'".$_POST['estado']."',".
 		"'".$_POST['categoria']."',".
-		"'".$cat_sin_tilde."',";
+		"'".$_POST['cat_bus']."',";
 		if ($_POST['oferta']=="") {
 			$sql.="null,";
 		}else{

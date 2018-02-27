@@ -211,3 +211,35 @@ input[type="number"]{
 .form-images{
 	display: none;
 }
+
+/*Editar producto*/
+.second{
+	margin-top: 10px;
+}
+.table-main{
+	width: 100%;
+	border-style: solid;
+	border-color: #666;
+	border-width: 1px;
+	border-collapse: collapse;
+}
+th,td{
+	padding: 5px 5px 5px 5px;
+	border-width: 1px;
+	border-style: solid;
+	text-align: left;
+}
+.btn-editar{
+	background: #2eb400;
+	color: white;
+	border-style: none;
+	font-size: 20px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	text-align: center;
+	border-radius: 5px 5px 5px 5px;
+
+}
+.btn-editar:hover{
+	background: green;
+}
