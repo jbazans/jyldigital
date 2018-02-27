@@ -84,6 +84,9 @@
 <body onload="animaciones('<?php if (isset($_GET["categoria"])) {
 		echo $categoria;
 	}else{ echo "destacado"; } ?>')">
+	<div class="spiders">
+		<h6>Regalos personalizados, Recuerdos para toda ocasi&oacute;, Ventas al por mayor y menor.</h6>
+	</div>
 	<div class="pantalla-carga">
 		<div class="centro-pantalla">
 			<img src="img/icono/icono.png" class="img-logo">

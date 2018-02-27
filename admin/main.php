@@ -53,7 +53,8 @@
 			<img src="../img/icono/icono.png" class="img-logo">
 			<div class="opciones-admin">
 				<a href=""><div class="opcion">Inicio</div></a>
-				<a href="/"><div class="opcion">Agregar productos</div></a>
+				<a href="/"><div class="opcion opc-active">Agregar productos</div></a>
+				<a href="../"><div class="opcion">Ver mi web</div></a>
 				<a href="../recursos/LogOut.php"><div class="opcion">Salir</div></a>
 			</div>
 		</div>
@@ -66,18 +67,27 @@
 						<div class="aclaracion"></div>
 					</div>
 					<div class="input-texto">
-						<input type="text" id="nombre">
-						<button class="btn-add" onclick="add_descripcion('nombre')"><i class="fa fa-tag" aria-hidden="true"></i></button>
+						<div class="lado-input">
+							<input type="text" id="nombre">
+						</div>
+						<div class="botones-funcion">
+							<button class="btn-add" onclick="add_descripcion('nombre')"><i class="fa fa-tag" aria-hidden="true"></i></button>
+						</div>	
 					</div>	
 				</div>
-				<div class="fila-contenido">
+				<div class="fila-contenido fila-add">
 					<div class="label-texto">
 						<div class="solo-texto">Descripci&oacute;n</div>
-						<div class="aclaracion">(desc1,desc2,...)</div>
+						<div class="aclaracion">(agregue m&aacute;s lineas con el bot&oacute;n "+")</div>
 					</div>
 					<div class="input-texto">
-						<input type="text" id="descripcion">
-						<button class="btn-add" onclick="add_descripcion('descripcion')"><i class="fa fa-tag" aria-hidden="true"></i></button>
+						<div class="lado-input">
+							<input type="text" class="descripcion" id="desc1" placeholder="Descripci&oacute;n 1">
+						</div>
+						<div class="botones-funcion">
+							<button class="btn-add" onclick="add_descripcion('desc1')"><i class="fa fa-tag" aria-hidden="true"></i></button>
+							<button class="btn-add-campo" title="A&ntilde;adir campo" onclick="add_campo()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+						</div>						
 					</div>	
 				</div>
 				<div class="fila-contenido">
@@ -112,7 +122,7 @@
 						<div class="solo-texto">Im&aacute;genes</div>
 						<div class="aclaracion"></div>
 					</div>
-					<div class="input-texto">
+					<div class="input-imagenes">
 						<img src="../img/no-imagen.jpg" class="img-imagen" id="img1">
 						<img src="../img/no-imagen.jpg" class="img-imagen" id="img2">
 						<img src="../img/no-imagen.jpg" class="img-imagen" id="img3">

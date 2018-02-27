@@ -44,7 +44,10 @@ body{
 }
 .titulo-sugerencia{
 	font-size: 20px;
-	padding-bottom: 5px;
+	padding-bottom: 10px;
+}
+#sug{
+	font-size: 20px;
 }
 .btns{
 	display: flex;
@@ -58,7 +61,7 @@ body{
 	width: 50%;
 }
 .btn-insertar{
-	margin-top: 5px;
+	margin-top: 10px;
 	border-style: none;
 	font-size: 20px;
 	background: rgb(8,8,150);
@@ -72,7 +75,7 @@ body{
 }
 .btn-cancelar{
 	margin-left: 2px;
-	margin-top: 5px;
+	margin-top: 10px;
 	border-style: none;
 	font-size: 20px;
 	background: #ccc;
@@ -118,6 +121,9 @@ a{
 .opcion:hover{
 	background: rgb(10,10,60);
 }
+.opc-active{
+	background: rgb(10,10,60);
+}
 .titulo-panel{
 	background: white;
 	padding: 10px 10px 10px 10px;
@@ -148,6 +154,24 @@ a{
 	padding-bottom: 4px;
 	font-size: 15px;
 }
+.btn-add-campo{
+	padding-top: 2px;
+	padding-bottom: 4px;
+	font-size: 15px;
+}
+.input-texto{
+	width: 100%;	
+	display: flex;
+}
+.input-imagenes{
+	width: 100%;
+}
+.botones-funcion{
+	width: calc(100% - 500px);
+}
+.lado-input{
+	width: 500px;
+}
 input[type="text"]{
 	padding: 3px 5px 3px 5px;
 	width: 500px;
@@ -155,6 +179,9 @@ input[type="text"]{
 input[type="number"]{
 	padding: 3px 5px 3px 5px;
 	width: 200px;
+}
+#espacios{
+	padding-top: 10px;
 }
 #estado,#categoria{
 	width: 200px;

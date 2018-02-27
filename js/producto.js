@@ -196,5 +196,7 @@ $("#select-orden").change(function(){
 $("div.nav-contenido").on('mouseenter',function(){
     $("#selector-"+this.id).css("background","rgb(8,8,150)");
 }).on('mouseleave',function(){
-    $("#selector-"+this.id).css("background","rgb(255,255,255)");
+    if (this.id!="productos") {
+        $("#selector-"+this.id).css("background","rgb(255,255,255)");
+    }  
 });

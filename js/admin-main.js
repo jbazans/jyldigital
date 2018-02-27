@@ -1,17 +1,28 @@
 function ajustar() {	
-	$(".sugerencia").css("top",$("#descripcion").position().top+25);
-	$(".sugerencia").css("left",$("#descripcion").position().left);
 	$(".panel-lateral").css("height",document.documentElement.clientHeight);
 }
 
 function guardar_producto(){
 	$(".pantalla-carga").fadeIn(200);	
+	var arrayDesc=document.getElementsByClassName("descripcion");	
+	var descOrden="";
+	var cont=0;
+	for (var i =0; i < arrayDesc.length ; i++) {
+		if(arrayDesc[i].value!=""){
+			cont++;			
+			if (cont==1) {
+				descOrden+=arrayDesc[i].value;
+			}else{
+				descOrden+=","+arrayDesc[i].value;
+			}
+		}
+	}
 	$.ajax({
 		type:'POST',
 		url:'../recursos/guardarProducto.php',
 		data:{
 			nombre:document.getElementById("nombre").value,
-			descripcion:document.getElementById("descripcion").value,
+			descripcion:descOrden,
 			pre_web:document.getElementById("pre_web").value,
 			pre_tienda:document.getElementById("pre_tienda").value,
 			url:document.getElementById("url").value,
@@ -75,3 +86,17 @@ $(".img-imagen").click(function(){
 	    readFile(e.srcElement,iden);
 	}
 });
+
+var numero=1;
+function add_campo(){
+	numero++;
+	$(".fila-add").append(
+	'<div class="input-texto" id="espacios"><div class="lado-input">'+
+		'<input type="text" class="descripcion" id="desc'+numero+'" placeholder="Descripci&oacute;n '+numero+'">'+
+	'</div>'+
+	'<div class="botones-funcion">'+
+		'<button class="btn-add" onclick="add_descripcion(\'desc'+numero+'\')"><i class="fa fa-tag" aria-hidden="true"></i></button>'+
+	'</div></div>'
+	);
+	$(".panel-lateral").css("height",document.documentElement.clientHeight);
+}

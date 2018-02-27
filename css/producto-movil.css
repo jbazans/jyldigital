@@ -1,3 +1,6 @@
+.spiders{
+	display: none;
+}
 .fondo-blur{
 	filter: blur(6px);
 }
