@@ -218,16 +218,18 @@ input[type="number"]{
 }
 .table-main{
 	width: 100%;
-	border-style: solid;
-	border-color: #666;
-	border-width: 1px;
 	border-collapse: collapse;
+}
+th{
+	background: #666;
+	color: white;
 }
 th,td{
 	padding: 5px 5px 5px 5px;
 	border-width: 1px;
 	border-style: solid;
 	text-align: left;
+	border-color: #666;
 }
 .btn-editar{
 	background: #2eb400;
@@ -242,4 +244,57 @@ th,td{
 }
 .btn-editar:hover{
 	background: green;
+}
+#table-movil{
+	display: none;
+}
+#table-web{
+	display: block;
+}
+@media(max-width: 500px){
+	.cuerpo-modulo-main {
+	    display: block;
+	}
+	.panel-lateral{
+		width: 100%;
+		height: auto;
+		padding-bottom: 10px;
+	}
+	.panel-contenido{
+		width: calc(100% - 20px);
+	}
+	.img-logo{
+		margin-left: 120px;
+		width: calc(100% - 240px);
+	}
+	.contenido-panel{
+		padding-left: 10px;
+		padding-right: 10px;
+		width: calc(100% - 20px);
+	}
+	.lado-input{
+		width: calc(100% - 62px);
+	}
+	input[type="text"]{
+		width: 100%;
+	}
+	.botones-funcion{
+		width: 62px;
+	}
+	.img-imagen{
+		margin-right: 0px;
+		width: calc(100%/3 - 5px);
+	}
+	#estado,#categoria{
+		width: 100%;
+	}
+	.table-main{
+		font-size: 15px;
+	}
+	#table-movil{
+		display: block;
+	}
+	#table-web{
+		display: none;
+	}
 }

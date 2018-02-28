@@ -62,7 +62,7 @@
 		<div class="panel-contenido">
 			<div class="titulo-panel"><strong>Seleccione un producto</strong></div>
 			<div class="contenido-panel">
-				<table class="table-main">
+				<table class="table-main" id="table-web">
 					<tr>
 						<th>Nombre</th>
 						<th>Precio Web</th>
@@ -82,6 +82,33 @@
 							<td><?php echo $row['pro_precio_web']; ?></td>
 							<td><?php echo $row['pro_precio_tienda']; ?></td>
 							<td><?php echo $row['pro_categoria']; ?></td>
+							<td>
+								<a href="editarproducto.php?id=<?php echo $row['pro_id']; ?>"><button class="btn-editar" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+								</a>
+							</td>
+					</tr>
+						<?php
+						}
+						?>					
+				</table>
+				<table class="table-main" id="table-movil">
+					<tr>
+						<th>Nombre</th>
+						<th>Precio Web</th>
+						<th>Precio Tienda</th>
+						<th>Opciones</th>
+					</tr>
+					
+						<?php
+						include("../recursos/conexion.php");
+						$sql="SELECT * FROM PRODUCTOS";
+						$result=$con->query($sql);
+						while($row=$result->fetch_assoc()){
+						?>
+					<tr>
+							<td><?php echo $row['pro_nombre']; ?></td>
+							<td><?php echo $row['pro_precio_web']; ?></td>
+							<td><?php echo $row['pro_precio_tienda']; ?></td>
 							<td>
 								<a href="editarproducto.php?id=<?php echo $row['pro_id']; ?>"><button class="btn-editar" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
 								</a>

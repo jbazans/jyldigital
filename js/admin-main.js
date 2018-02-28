@@ -1,12 +1,16 @@
 function ajustar() {	
-	$(".panel-lateral").css("height",document.documentElement.clientHeight);
+	if (document.documentElement.clientWidth>500) {		
+		$(".panel-lateral").css("height",document.documentElement.clientHeight);
+	}
 }
 
 var idProducto="";
 
 function ajuste_editar(id){
 	idProducto=id;
-	$(".panel-lateral").css("height",document.documentElement.clientHeight);
+	if (document.documentElement.clientWidth>500) {		
+		$(".panel-lateral").css("height",document.documentElement.clientHeight);
+	}
 	$.ajax({
 		type:'POST',
 		url:'../recursos/getProducto.php',
