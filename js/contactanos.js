@@ -1,6 +1,7 @@
 window.onLoad=precarga();
 
 function precarga(){
+    $("#contactanos").addClass("nav-contenido-activo");
     $("#selector-contactanos").addClass("selector-activo");
 	setTimeout(function(){
 		$(".mensaje").text("Casi listo...");

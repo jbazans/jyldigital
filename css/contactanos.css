@@ -7,12 +7,10 @@
 }
 .contactanos-cuerpo-main{
 	width: 100%;
-	min-width: 1200px;
 	background: #eee;
 }
 .contenedor-img{
 	width: 100%;
-	min-width: 1200px;
 	position: relative;
 }
 .img-con-top{
@@ -268,4 +266,44 @@
 }
 .separador-footer {
 	height: 0px;
+}
+@media(max-width: 1200px){
+	.contenido-img-titulo{
+		width: 100%;
+		margin-left: 0px;
+	}
+	.cuerpo-contactanos{
+		width: calc(100% - 20px);
+	}
+	.form-contactanos{
+		width: 100%;
+		margin-left: 0px;
+	}
+	.img-cotizacion{
+		width: 60%;
+	}
+	.separador-filas{
+		height: 10px;
+	}
+	.lado-icono{
+		width: 30px;
+		font-size: 15px;
+	}
+	.lado-input{
+		font-size: 15px;
+		width: calc(100% - 33px);
+	}
+	.lado-input input{
+		font-size: 15px; 
+		padding: 5px 5px 5px 5px;
+	}
+	.fila textarea{
+		font-size: 15px;
+	}
+	.text-area-in{
+		height: 40px;
+	}
+	.btn-enviar{
+		margin-top: 0px;
+	}
 }

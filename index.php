@@ -27,12 +27,12 @@
 			<div class="mensaje">Cargando recursos...</div>
 			<img src="img/gif/carga.gif" class="img-carga">
 		</div>
-	</div>
+	</div>	
 	<img src="img/fondo.jpg" class="fondo-decoracion">
 	<div class="fondo-blur">
 	<?php
 		cabecera();
-	?>	
+	?>		
 	<div class="banner-main">
 		<div class="contenedor-img">
 			<img src="img/regalo.jpg" class="img-banner">

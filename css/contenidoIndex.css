@@ -4,7 +4,6 @@
 }
 .banner-main{
 	width: 100%;
-	min-width: 1200px;
 	position: relative;
 }
 .contenedor-img{
@@ -15,30 +14,20 @@
 	position: relative;
 }
 .textosanimados{
-	margin-left: calc((100% - 1000px)/2);
-	width: 1000px;
+	margin-left: 5%;
+	width: 90%;
 	position: absolute;
 	text-align: right;
 	overflow: hidden;
 	display: flex;
 }
 .gif-animado{
-	width: 150px;
+	width: 20%;
 }
 .img-gif-oferta{
 	width: 0%;
-	margin: 50%;
 	transition: 2s;
 	opacity: 0;
-}
-@media(max-width: 1000px){
-	.textosanimados{
-		margin-left: 0px;
-		width: 1000px;
-		position: absolute;
-		top: 70px;
-		text-align: right;
-	}
 }
 .textos-animados{
 	width: calc(100% - 150px);
@@ -46,6 +35,21 @@
 .banner-textoanimado{	
 	font-size: 50px;
 	color: #ac4777;
+}
+@media(max-width: 1000px){
+	.banner-textoanimado{	
+		font-size: 45px;
+	}
+}
+@media(max-width: 800px){
+	.banner-textoanimado{	
+		font-size: 40px;
+	}
+}
+@media(max-width: 700px){
+	.banner-textoanimado{	
+		font-size: 30px;
+	}
 }
 #texto1,#texto2,#texto3{
 	transform: translateX(100px);
@@ -59,26 +63,27 @@
 	left: 0px;
 	width: 100%;
 	z-index: -100;
-	min-width: 1200px;
-
 }
 .cuerpo-main{
 	background: #eee;
 	padding: 0px 20px 0px 20px;
 	width: calc(100% - 40px);
-	min-width: 1160px;	
 }
 .cuerpo-decoracion{
 	background: #eee;
 	width: 100%;
 	background: rgba(0,90,255,0.7);
-	min-width: 1200px;
 }
 .cuerpo-main-contenido{
 	padding: 10px 0px 10px 0px;
 	width: 1160px;
 	margin-left: auto;
 	margin-right: auto;	
+}
+@media(max-width: 1200px){
+	.cuerpo-main-contenido{
+		width: 100%;
+	}
 }
 .cuerpo-main-contenido-titulo{
 	padding-top: 10px;
@@ -137,11 +142,31 @@
 	background: #2334a6;
 	color: white;
 }
+@media(max-width: 1200px){
+	.detalle-producto{
+		padding-top: 80px;
+		padding-bottom: 20px;
+	}
+	.btn-ver-detalle{
+		font-size: 20px;
+	}
+}
+@media(max-width: 800px){
+	.detalle-producto{
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+}
 .cuerpo-servicios{
 	padding: 10px 0px 20px 0px;
 	width: 1200px;
 	margin-left: auto;
 	margin-right: auto;	
+}
+@media(max-width: 1200px){
+	.cuerpo-servicios{
+		width: 100%;
+	}
 }
 .cuerpo-servicios-titulo{
 	padding-top: 10px;
@@ -165,6 +190,16 @@
 	color: white;
 	font-size: 30px;
 	font-family: 'Rubik', sans-serif;
+}
+@media(max-width: 1200px){
+	.cuerpo-servicio{
+		font-size: 25px;
+	}
+}
+@media(max-width: 800px){
+	.cuerpo-servicio{
+		font-size: 20px;
+	}
 }
 .img-social{
 	padding-top: 20px;

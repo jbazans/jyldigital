@@ -3,7 +3,7 @@
 ?>	
 	<div class="cabecera-main">
 		<div class="cabecera-contacto-numero-izquierdo">
-			<div class="contacto-texto">Env&#237;o gratis desde montos mayores a S/. 200.00</div>
+			Env&#237;o gratis desde montos mayores a S/. 200.00
 		</div>
 		<div class="cabecera-espacio"></div>
 		<div class="cabecera-contacto-numero-derecho">
