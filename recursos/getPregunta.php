@@ -5,12 +5,15 @@
 		$sql="select * from TB_MSG_WEB where msg_ip='".$ipCliente.
 		"' and msg_state = 0 order by msg_id desc limit 1";
 		$result=$con->query($sql);
-		//$response=array();
+		$response=array();
 		if ($row=$result->fetch_assoc()) {
 			$sql_update="update TB_MSG_WEB set msg_state = 1 ".
 			"where msg_id=".$row['msg_id'];
 			$result2=$con->query($sql_update);
-			echo $row['msg_value'];
+			array_push($response, $row['msg_value']);
+			array_push($response, $row['msg_fecha']);
+			array_push($response, $row['msg_hora']);
+			echo json_encode($response);
 		}else{
 			echo "No hay pregunta.";
 		}

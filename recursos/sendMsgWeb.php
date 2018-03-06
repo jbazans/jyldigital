@@ -33,7 +33,7 @@
 		$result_count=$con->query($sql_orden);
 		$contador=mysqli_num_rows($result_count);
 		$string="0".$contador;
-		switch(sizeof($string)){
+		switch(strlen($string)){
 			case '1':$string="00000".$string;break;
 			case '2':$string="0000".$string;break;
 			case '3':$string="000".$string;break;

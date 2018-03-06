@@ -12,6 +12,7 @@ function ajustar_chat() {
 	$(".lado-activado").css("height",$(".lado-animacion").height());
 }
 
+var arrayIpsMainChat=[];
 function buscarChats(){
 	$.ajax({
 		type:'POST',
@@ -19,20 +20,50 @@ function buscarChats(){
     	data:{
     	},
     	success:function(data){
-    		var snd = new Audio("../recursos/sonido/msg-sound.mp3");
+    		var snd = new Audio("../recursos/sonido/msg-sound.wav");
     		if (data!="No hay respuesta.") {
     			var data_resp=JSON.parse(data);
-    			for (var i = 0; i < data_resp.length; i++) {
-    				var id=data_resp[i].replace(".","_");
+    			if (arrayIpsMainChat.length==0) {
+    				snd.play();
+    				arrayIpsMainChat.push(data_resp[0]);
+    			}else{
+    				var cont_nuevo_ip=0;
+    				for (var i = 0; i < arrayIpsMainChat.length; i++) {
+    					if (arrayIpsMainChat[i]!=data_resp[0]) {
+    						cont_nuevo_ip++;
+    					}
+    				}
+    				if (cont_nuevo_ip>0) {
+    					snd.play();
+    					arrayIpsMainChat.push(data_resp[0]);
+    				}
+    			}
+    				var id=data_resp[0].replace(".","_");
     				id=id.replace(".","_");
     				id=id.replace(".","_");
     				id=id.replace(":","_");
-    				id=id.replace(":","_");
-    				$("#"+id).css("display","block");
-    			}	   			
-  				//snd.play();			   
+    				id=id.replace(":","_");    				
+    				if ($('#'+id).length) {
+					  	$("#"+id).css("display","block");
+					} else {
+						var html='<div class="separador-chats"></div>';
+						html+='<div class="fila-chats">';
+						html+='<div class="lado-datos">';
+						html+='<div class="client-name"><strong>'+
+						data_resp[i]+'</strong></div>';
+						html+="";//numero de mensajes
+						html+='<div class="client-link">'+
+						'<a href="verChat.php?idCli='+data_resp[0]+
+						'">Ver chat</a></div>';
+						html+='</div>';
+						html+='<div class="lado-animacion">';
+						html+='<div id="'+id+'" class="lado-activado"'+
+						' style="display:block;"></div>';
+						html+='</div>';
+						html+='</div>';
+					  	$(".contenido-panel").append(html);
+					}			   
     		}    
-    		//snd.stop();
     	}
 	});
 }
@@ -50,6 +81,8 @@ function ajustar_chat_enlinea(idCliente){
 	ventanaChat.scrollTop = ventanaChat.scrollHeight;
 }
 
+var arrayIps=[];
+var cont_agre_ip=0;
 function buscarPreguntas(){
 	$.ajax({
 		type:'POST',
@@ -58,20 +91,64 @@ function buscarPreguntas(){
     		ip:ipCliente
     	},
     	success:function(data){
-    		var snd = new Audio("../recursos/sonido/msg-sound.mp3");
+    		var snd = new Audio("../recursos/sonido/msg-sound.wav");
     		if (data!="No hay pregunta.") {
+    			var data_resp=JSON.parse(data);
     			var msg='<div class="fila-mensajes">'+
-		    			'<div class="mensaje-ind">'+
-		    			data+
-		    			'</div></div>';
+		    				'<div class="mensaje-ind">'+
+		    				data_resp[0]+
+		    				'</div>'+
+		    				'<div class="mensaje-fecha">('+
+		    				data_resp[1]+' - '+data_resp[2]+
+		    				')</div>'+
+		    			'</div>';
 		    	$(".pantalla-chat").append(msg);
 		    	var ventanaChat=document.getElementById("chat-web-online");
 		    	ventanaChat.scrollTop = ventanaChat.scrollHeight;
-  				//snd.play();			   
+  				snd.play();			   
     		}    
-    		//snd.stop();
     	}
 	});
+	$.ajax({
+		type:'POST',
+    	url:'../recursos/getAllAsks.php',
+    	data:{
+    	},
+    	success:function(data){
+    		var snd = new Audio("../recursos/sonido/msg-sound.wav");
+    		if (data!="No hay respuesta.") {
+    			var data_resp=JSON.parse(data);
+    			if (data_resp[0]==ipCliente) {
+    				if (cont_agre_ip==0) {
+    					cont_agre_ip++;
+    					arrayIps.push(data_resp[0]);
+    				}    				
+    			}else{
+	    			if (arrayIps.length==0) {
+	    				snd.play();	
+	    				arrayIps.push(data_resp[0]);
+	    				$(".aviso-mensaje").fadeIn(500);
+	    			}else{
+	    				var cont_ips=0;
+	    				for (var i = 0; i < arrayIps.length; i++) {
+		    				if(data_resp[0]!=arrayIps[i]){	    					  			
+	  							cont_ips++;
+		    				}
+		    			}
+		    			if (cont_ips>0) {
+		    				snd.play();	
+		    				$(".aviso-mensaje").fadeIn(500);
+	  						arrayIps.push(data_resp[0]);
+		    			}
+	    			}	
+    			}   
+    		}     
+    	}
+	});
+}
+
+function cerrar_aviso(){
+	$(".aviso-mensaje").fadeOut(500);
 }
 
 $("#input-resp").keypress(function(e){
@@ -84,14 +161,30 @@ $("#input-resp").keypress(function(e){
 function send_resp(idCliente){
 	var mensaje=document.getElementById("input-resp").value;
     document.getElementById("input-resp").value="";
+    var hoy = new Date();
+	var dd = hoy.getDate();
+	var mm = hoy.getMonth()+1;
+	var yyyy = hoy.getFullYear();
+	if(dd<10){
+	    dd='0'+dd;
+	} 
+	if(mm<10){
+	    mm='0'+mm;
+	} 
+	var hoy = dd+'/'+mm+'/'+yyyy;
+	var hour=new Date();
+	var hora=hour.getHours()+":"+hour.getMinutes(); 
     var msg='<div class="fila-mensajes">'+
     			'<div class="mensaje-ind-blue">'+
     			mensaje+
-    			'</div></div>';
+    			'</div>'+
+    			'<div class="mensaje-fecha">('+
+    			hoy+' - '+hora+
+    			')</div>'+
+    		'</div>';
     $(".pantalla-chat").append(msg);  
     var ventanaChat=document.getElementById("chat-web-online");
 	ventanaChat.scrollTop = ventanaChat.scrollHeight; 
-    //revisar_respuesta=setInterval("ver_respuesta()",2000); 
     $.ajax({
     	type:'POST',
     	url:'../recursos/respMsgWeb.php',

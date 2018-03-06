@@ -104,7 +104,7 @@
 					<input type="text" id="input-texto">
 				</div>
 				<div class="lado-btn">
-					<button class="btn-send-msg"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+					<button class="btn-send-msg" onclick="enviar_pregunta()"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
 				</div>
 			</div>
 		</div>

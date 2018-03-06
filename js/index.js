@@ -36,9 +36,7 @@ function ocultarTexto(){
 function efectoferta(){	
 	$(".img-gif-oferta").css("opacity","1");
 	$(".img-gif-oferta").animate({
-		width:"100%"
-	});
-	$(".img-gif-oferta").animate({
+		width:"100%",
 		margin:"0%"
 	});
 	setTimeout('ocultaroferta()',6000);
@@ -47,9 +45,7 @@ function efectoferta(){
 function ocultaroferta(){	
 	$(".img-gif-oferta").css("opacity","0");
 	$(".img-gif-oferta").animate({
-		width:"0%"
-	});
-	$(".img-gif-oferta").animate({
+		width:"0%",
 		margin:"50%"
 	});
 	setTimeout('acomodaroferta()',2000);
@@ -139,18 +135,28 @@ var revisar_respuesta;
 var mi_ip;
 $("#input-texto").keypress(function(e){
     var tecla = (document.all) ? e.keyCode : e.which;
-    if (tecla==13){    	
-    	var mensaje=document.getElementById("input-texto").value;
-    	document.getElementById("input-texto").value="";
-    	var msg='<div class="respuesta-cliente">'+
-    			'<div class="cliente-linea">'+
-    			mensaje+
-    			'</div></div>';
-    	$(".contenido-chat").append(msg);   
-    	revisar_respuesta=setInterval("ver_respuesta()",2000); 
-    	var objDiv = document.getElementById("chat-online");
+    if (tecla==13){
+    	$(".btn-send-msg").click(); 	
+    }
+});
+
+var timer_respuesta=0;
+function enviar_pregunta(){
+	var mensaje=document.getElementById("input-texto").value;
+    if (mensaje!="") {
+		document.getElementById("input-texto").value="";
+	    var msg='<div class="respuesta-cliente">'+
+	    			'<div class="cliente-linea">'+
+	    			mensaje+
+	    			'</div></div>';
+	    $(".contenido-chat").append(msg);   
+	    if (timer_respuesta==0) {
+	    	revisar_respuesta=setInterval("ver_respuesta()",2000); 
+	    	timer_respuesta++;
+	    }
+	    var objDiv = document.getElementById("chat-online");
 		objDiv.scrollTop = objDiv.scrollHeight;	
-    	$.ajax({
+	    $.ajax({
     		type:'POST',
     		url:'recursos/sendMsgWeb.php',
     		data:{
@@ -161,29 +167,8 @@ $("#input-texto").keypress(function(e){
     			mi_ip=data_resp[1]; 	
     		}
     	});
-    }
-});
-
-/*
-$(".btn-send-msg").click(function(){    
-    var msg='<div class="respuesta-cliente">'+
-    			'<div class="cliente-linea">'+
-    			document.getElementById("input-texto").value+
-    			'</div></div>';
-    $(".contenido-chat").append(msg);    	
-    	$.ajax({
-    		type:'POST',
-    		url:'recursos/sendMsgWeb.php',
-    		data:{
-    			msg:document.getElementById("input-texto").value
-    		},
-    		success:function(data){
-    			console.log(data);
-    			document.getElementById("input-texto").value="";
-    			revisar_respuesta=setInterval("ver_respuesta()",2000);
-    		}
-    	});
-});*/
+	}
+}
 
 function ver_respuesta(){
 	$.ajax({

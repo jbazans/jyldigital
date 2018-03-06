@@ -25,11 +25,20 @@
 	<script type="text/javascript" src="../js/jquery/jquery-3.2.1.min.js"></script>
 	<link rel="icon" type="image/png" href="../img/icono/icono.png" />
 	<link rel="stylesheet" type="text/css" href="../css/admin-main.css">
+	<link rel="stylesheet" type="text/css" href="../css/admin-main-responsive.css">
 </head>
 <body onload="ajustar_chat_enlinea('<?php echo $_GET['idCli']; ?>')">
 	<div class="pantalla-carga">
 		<div class="cuadro-carga">
 			<img src="../img/gif/carga.gif" class="img-carga">
+		</div>
+	</div>
+	<div class="aviso-mensaje">
+		<div class="contenedor-main-aviso">
+			<div class="texto-aviso-mensaje">Nueva conversaci&oacute;n</div>
+			<div class="btn-contenedor">
+				<button class="btn-cerrar" onclick="cerrar_aviso()"><i class="fa fa-times" aria-hidden="true"></i></button>
+			</div>		
 		</div>
 	</div>
 	<div class="pantalla-sugerencia">
@@ -79,9 +88,9 @@
 					?>
 					<div class="fila-mensajes">
 						<div class="mensaje-ind"><?php echo $row['msg_value']; ?>
-							<div class="mensaje-fecha">
-								(<?php echo $row['msg_fecha']." - ".$row['msg_hora']; ?>)
-							</div>
+						</div>
+						<div class="mensaje-fecha">
+							(<?php echo $row['msg_fecha']." - ".$row['msg_hora']; ?>)
 						</div>
 					</div>
 					<?php
@@ -89,6 +98,9 @@
 					?>
 					<div class="fila-mensajes">
 						<div class="mensaje-ind-blue"><?php echo $row['msg_value']; ?>
+						</div>
+						<div class="mensaje-fecha">
+							(<?php echo $row['msg_fecha']." - ".$row['msg_hora']; ?>)
 						</div>
 					</div>
 				<?php
