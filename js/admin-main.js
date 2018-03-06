@@ -4,8 +4,108 @@ function ajustar() {
 	}
 }
 
-var idProducto="";
+function ajustar_chat() {	
+	if (document.documentElement.clientWidth>500) {		
+		$(".panel-lateral").css("height",document.documentElement.clientHeight);
+	}
+	var searchChats=setInterval("buscarChats()",2000);
+	$(".lado-activado").css("height",$(".lado-animacion").height());
+}
 
+function buscarChats(){
+	$.ajax({
+		type:'POST',
+    	url:'../recursos/getAllAsks.php',
+    	data:{
+    	},
+    	success:function(data){
+    		var snd = new Audio("../recursos/sonido/msg-sound.mp3");
+    		if (data!="No hay respuesta.") {
+    			var data_resp=JSON.parse(data);
+    			for (var i = 0; i < data_resp.length; i++) {
+    				var id=data_resp[i].replace(".","_");
+    				id=id.replace(".","_");
+    				id=id.replace(".","_");
+    				id=id.replace(":","_");
+    				id=id.replace(":","_");
+    				$("#"+id).css("display","block");
+    			}	   			
+  				//snd.play();			   
+    		}    
+    		//snd.stop();
+    	}
+	});
+}
+
+var ipCliente;
+function ajustar_chat_enlinea(idCliente){
+	ipCliente=idCliente;
+	if (document.documentElement.clientWidth>500) {		
+		$(".panel-lateral").css("height",document.documentElement.clientHeight);
+	}
+	var searchAsks=setInterval("buscarPreguntas()",2000);
+	$(".lado-activado").css("height",$(".lado-animacion").height());
+	$(".pantalla-chat").css("height",document.documentElement.clientHeight-125);
+	var ventanaChat=document.getElementById("chat-web-online");
+	ventanaChat.scrollTop = ventanaChat.scrollHeight;
+}
+
+function buscarPreguntas(){
+	$.ajax({
+		type:'POST',
+    	url:'../recursos/getPregunta.php',
+    	data:{
+    		ip:ipCliente
+    	},
+    	success:function(data){
+    		var snd = new Audio("../recursos/sonido/msg-sound.mp3");
+    		if (data!="No hay pregunta.") {
+    			var msg='<div class="fila-mensajes">'+
+		    			'<div class="mensaje-ind">'+
+		    			data+
+		    			'</div></div>';
+		    	$(".pantalla-chat").append(msg);
+		    	var ventanaChat=document.getElementById("chat-web-online");
+		    	ventanaChat.scrollTop = ventanaChat.scrollHeight;
+  				//snd.play();			   
+    		}    
+    		//snd.stop();
+    	}
+	});
+}
+
+$("#input-resp").keypress(function(e){
+    var tecla = (document.all) ? e.keyCode : e.which;
+    if (tecla==13){  
+    	$(".btn-send").click();    	
+    }
+});
+
+function send_resp(idCliente){
+	var mensaje=document.getElementById("input-resp").value;
+    document.getElementById("input-resp").value="";
+    var msg='<div class="fila-mensajes">'+
+    			'<div class="mensaje-ind-blue">'+
+    			mensaje+
+    			'</div></div>';
+    $(".pantalla-chat").append(msg);  
+    var ventanaChat=document.getElementById("chat-web-online");
+	ventanaChat.scrollTop = ventanaChat.scrollHeight; 
+    //revisar_respuesta=setInterval("ver_respuesta()",2000); 
+    $.ajax({
+    	type:'POST',
+    	url:'../recursos/respMsgWeb.php',
+    	data:{
+    		ip:idCliente,
+    		msg:mensaje
+    	},
+    	success:function(data){   
+
+    	}
+   	});
+}
+
+var idProducto="";
 function ajuste_editar(id){
 	idProducto=id;
 	if (document.documentElement.clientWidth>500) {		

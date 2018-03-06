@@ -123,6 +123,12 @@
 							Peluches
 						</div>
 					</a>
+					<div class="separador-categorias"></div>
+					<a href="../productos.php?categoria=Accesorios">
+						<div class="categoria-titulo" id="Accesorios">
+							Accesorios
+						</div>
+					</a>
 				</div>
 				<div class="main-contenido-producto-select select-producto">
 					<div class="sub-contenido-producto-select">

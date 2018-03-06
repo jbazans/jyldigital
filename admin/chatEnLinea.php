@@ -9,7 +9,7 @@
 <!DOCTYPE>
 <html>
 <head>
-	<title>DashBoard Admininstrador | Editar</title>
+	<title>DashBoard Admininstrador</title>
 	<meta charset="utf-8">
 	<meta name="description" content="Regalos personalizados">
   	<meta name="keywords" content="Imprenta, Sublimacion, Publicidad">
@@ -21,7 +21,7 @@
 	<link rel="icon" type="image/png" href="../img/icono/icono.png" />
 	<link rel="stylesheet" type="text/css" href="../css/admin-main.css">
 </head>
-<body onload="ajustar()">
+<body onload="ajustar_chat()">
 	<div class="pantalla-carga">
 		<div class="cuadro-carga">
 			<img src="../img/gif/carga.gif" class="img-carga">
@@ -54,71 +54,52 @@
 			<div class="opciones-admin">
 				<a href=""><div class="opcion">Inicio</div></a>
 				<a href="main.php"><div class="opcion">Agregar productos</div></a>
-				<a href="productos.php"><div class="opcion opc-active">Editar producto</div></a>
-				<a href="chatEnLinea.php"><div class="opcion">Chat en linea</div></a>
+				<a href="productos.php"><div class="opcion">Editar producto</div></a>
+				<a href="chatEnLinea.php"><div class="opcion opc-active">Chat en linea</div></a>
 				<a href="../"><div class="opcion">Ver mi web</div></a>
 				<a href="../recursos/LogOut.php"><div class="opcion">Salir</div></a>
 			</div>
 		</div>
 		<div class="panel-contenido">
-			<div class="titulo-panel"><strong>Seleccione un producto</strong></div>
+			<div class="titulo-panel"><strong>Chat en linea</strong></div>
 			<div class="contenido-panel">
-				<table class="table-main" id="table-web">
-					<tr>
-						<th>Nombre</th>
-						<th>Precio Web</th>
-						<th>Precio Tienda</th>
-						<th>Categoria</th>
-						<th>Opciones</th>
-					</tr>
-					
-						<?php
-						include("../recursos/conexion.php");
-						$sql="SELECT * FROM PRODUCTOS";
+				<?php
+					include("../recursos/conexion.php");
+					if($con){
+						$sql="SELECT msg_ip,count(*),msg_state FROM TB_MSG_WEB group BY msg_ip";
 						$result=$con->query($sql);
+						$contador=mysqli_num_rows($result);
+						$num=0;
 						while($row=$result->fetch_assoc()){
-						?>
-					<tr>
-							<td><?php echo $row['pro_nombre']; ?></td>
-							<td><?php echo $row['pro_precio_web']; ?></td>
-							<td><?php echo $row['pro_precio_tienda']; ?></td>
-							<td><?php echo $row['pro_categoria']; ?></td>
-							<td>
-								<a href="editarproducto.php?id=<?php echo $row['pro_id']; ?>"><button class="btn-editar" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-								</a>
-							</td>
-					</tr>
-						<?php
+							$id=str_replace(".","_",$row['msg_ip']);
+							$id=str_replace(":","_",$id);
+							$num++;
+				?>
+					<div class="fila-chats">
+						<div class="lado-datos">
+							<div class="client-name"><strong><?php echo $row['msg_ip']; ?></strong></div>
+							<div class="client-detalles">Mensajes: <?php echo $row['count(*)']; ?></div>
+							<div class="client-link"><a href="verChat.php?idCli=<?php echo $row['msg_ip']; ?>">Ver chat</a></div>
+						</div>
+						<div class="lado-animacion">
+							<div id="<?php echo $id; ?>" class="lado-activado"
+								<?php 
+								if ($row['msg_state']==0) {
+									echo "style='display:block;'";
+								}
+								?>>
+							</div>
+						</div>
+					</div>
+				<?php
+							if ($num!=$contador) {
+				?>
+					<div class="separador-chats"></div>
+				<?php
+							}				
 						}
-						?>					
-				</table>
-				<table class="table-main" id="table-movil">
-					<tr>
-						<th>Nombre</th>
-						<th>Precio Web</th>
-						<th>Precio Tienda</th>
-						<th>Opciones</th>
-					</tr>
-					
-						<?php
-						include("../recursos/conexion.php");
-						$sql="SELECT * FROM PRODUCTOS";
-						$result=$con->query($sql);
-						while($row=$result->fetch_assoc()){
-						?>
-					<tr>
-							<td><?php echo $row['pro_nombre']; ?></td>
-							<td><?php echo $row['pro_precio_web']; ?></td>
-							<td><?php echo $row['pro_precio_tienda']; ?></td>
-							<td>
-								<a href="editarproducto.php?id=<?php echo $row['pro_id']; ?>"><button class="btn-editar" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-								</a>
-							</td>
-					</tr>
-						<?php
-						}
-						?>					
-				</table>
+					}
+				?>				
 			</div>
 		</div>
 	</div>

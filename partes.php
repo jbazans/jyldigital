@@ -88,4 +88,27 @@
 	</footer>
 <?php
 	}
+
+	function chat_online(){
+?>
+	<div class="cuerpo-chat">
+		<div class="chat-titulo"><i class="fa fa-angle-up" aria-hidden="true"></i> Consultanos</div>
+		<div class="cuerpo-chat-msg">
+			<div class="espacio-msg"></div>
+			<div class="contenido-chat" id="chat-online">
+				<div class="espacio-msg-chat"></div>
+			</div>
+			<div class="espacio-msg"></div>
+			<div class="input-client">
+				<div class="lado-input">
+					<input type="text" id="input-texto">
+				</div>
+				<div class="lado-btn">
+					<button class="btn-send-msg"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php
+	}
 ?>

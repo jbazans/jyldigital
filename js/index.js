@@ -118,3 +118,90 @@ $("div.nav-contenido").on('mouseenter',function(){
 }).on('mouseleave',function(){
 	$("#selector-"+this.id).css("background","rgb(255,255,255)");
 });
+
+var click_chat=0;
+$(".chat-titulo").click(function(){
+	$(".chat-titulo").empty();
+	if (click_chat==0) {
+		$(".chat-titulo").append('<i class="fa fa-angle-down" aria-hidden="true"></i> Consultanos');
+		click_chat=1;
+	}else{
+		$(".chat-titulo").append('<i class="fa fa-angle-up" aria-hidden="true"></i> Consultanos');
+		click_chat=0;
+	}
+	$(".cuerpo-chat-msg").animate({
+		height:"toggle"
+	});
+	document.getElementById("input-texto").focus();
+});
+
+var revisar_respuesta;
+var mi_ip;
+$("#input-texto").keypress(function(e){
+    var tecla = (document.all) ? e.keyCode : e.which;
+    if (tecla==13){    	
+    	var mensaje=document.getElementById("input-texto").value;
+    	document.getElementById("input-texto").value="";
+    	var msg='<div class="respuesta-cliente">'+
+    			'<div class="cliente-linea">'+
+    			mensaje+
+    			'</div></div>';
+    	$(".contenido-chat").append(msg);   
+    	revisar_respuesta=setInterval("ver_respuesta()",2000); 
+    	var objDiv = document.getElementById("chat-online");
+		objDiv.scrollTop = objDiv.scrollHeight;	
+    	$.ajax({
+    		type:'POST',
+    		url:'recursos/sendMsgWeb.php',
+    		data:{
+    			msg:mensaje
+    		},
+    		success:function(data){    			
+    			var data_resp=JSON.parse(data);
+    			mi_ip=data_resp[1]; 	
+    		}
+    	});
+    }
+});
+
+/*
+$(".btn-send-msg").click(function(){    
+    var msg='<div class="respuesta-cliente">'+
+    			'<div class="cliente-linea">'+
+    			document.getElementById("input-texto").value+
+    			'</div></div>';
+    $(".contenido-chat").append(msg);    	
+    	$.ajax({
+    		type:'POST',
+    		url:'recursos/sendMsgWeb.php',
+    		data:{
+    			msg:document.getElementById("input-texto").value
+    		},
+    		success:function(data){
+    			console.log(data);
+    			document.getElementById("input-texto").value="";
+    			revisar_respuesta=setInterval("ver_respuesta()",2000);
+    		}
+    	});
+});*/
+
+function ver_respuesta(){
+	$.ajax({
+    	type:'POST',
+    	url:'recursos/getRespuesta.php',
+    	data:{
+    		ip:mi_ip
+    	},
+    	success:function(data){
+    		if (data!="No hay respuesta.") {
+    			var msg='<div class="respuesta-web">'+
+		    		'<div class="web-linea">'+
+		    		data+
+		    		'</div></div>';
+			    $(".contenido-chat").append(msg);
+			    var objDiv = document.getElementById("chat-online");
+				objDiv.scrollTop = objDiv.scrollHeight;	
+    		}    		
+    	}
+    });	
+}

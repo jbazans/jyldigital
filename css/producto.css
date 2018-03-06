@@ -7,7 +7,6 @@
 .main-cobertura{
 	display: none;
 	width: 100%;
-	min-width: 1200px;
 	background: rgba(50,50,50,0.7);
 	position: fixed;
 	height: 100%;
@@ -29,7 +28,7 @@
 }
 #map {
     height: 600px;
-    width:800px;
+    width: 100%;
 }
 @media(max-width: 1450px){
 	#map{

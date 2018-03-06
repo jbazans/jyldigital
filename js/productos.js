@@ -134,7 +134,9 @@ $( "div.producto-contenido" )
 $("#buscar").keypress(function(e){
     var tecla = (document.all) ? e.keyCode : e.which;
     if (tecla==13){
-        window.location.href='productos.php?producto='+document.getElementById("buscar").value;
+        var producto=document.getElementById("buscar").value;        
+        producto=producto.replace("ñ","&ntilde;");
+        window.location.href='productos.php?producto='+producto;
     }
 });
 

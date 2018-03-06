@@ -137,6 +137,12 @@ a{
 	padding: 10px 20px 10px 20px;
 	width: calc(100% - 40px);
 }
+.contenido-chat-panel{
+	margin-top: 10px;
+	background: white;
+	padding: 10px 10px 10px 10px;
+	width: calc(100% - 20px);
+}
 .fila-contenido{
 	width: 100%;
 	margin-bottom: 10px;
@@ -250,6 +256,94 @@ th,td{
 }
 #table-web{
 	display: block;
+}
+.fila-chats{
+	padding: 5px 5px 5px 5px;
+	width: calc(100% - 10px);
+	background: #eee;
+	display: flex;
+}
+.lado-datos{
+	width: calc(100% - 60px);
+}
+.lado-animacion{
+	width: 60px;
+	background: #ccc;
+	border-radius: 5px 5px 5px 5px;
+}
+.lado-activado{
+	display: none;
+	width: 100%;
+	background: green;
+	border-radius: 5px 5px 5px 5px;
+}
+.separador-chats{
+	width: 100%;
+	height: 10px;
+	background: white;
+}
+.client-detalles{
+	padding: 5px 5px 5px 5px;
+	width: calc(100% - 10px);
+	font-size: 15px;
+}
+.client-link{
+	padding: 0px 5px 0px 5px;
+	width: calc(100% - 10px);
+	font-size: 15px;
+	text-decoration: underline;
+}
+.pantalla-chat{
+	width: 100%;
+	height: 500px;
+	overflow-y: scroll;
+}
+.fila-mensajes{
+	width: calc(100%);
+	padding: 2px 0px 2px 0px;
+}
+.mensaje-ind{
+	width: calc(100% - 10px);
+	padding: 5px 5px 5px 5px;
+	background: #ddd;
+	text-align: left;
+	display: flex;
+}
+.mensaje-fecha{
+	font-size: 10px;
+	padding-left: 10px;
+	padding-top: 5px;
+}
+.mensaje-ind-blue{
+	width: calc(100% - 10px);
+	padding: 5px 5px 5px 5px;
+	background: rgb(60,160,220);
+	color: white;
+	text-align: right;
+}
+.input-resp-web{
+	width: 100%;
+	display: flex;
+}
+.lado-input{
+	width: calc(100% - 35px);
+}
+#input-resp{
+	width: 100%;
+	padding: 5px 5px 5px 5px;
+	font-size: 15px;
+}
+.lado-boton{
+	width: 35px;
+}
+.btn-send{
+	width: 100%;
+	font-size: 20px;
+	background: rgb(8,8,150);
+	color: white;
+	padding-top: 5px;
+	padding-bottom: 6px;
+	border-style: none;
 }
 @media(max-width: 500px){
 	.cuerpo-modulo-main {

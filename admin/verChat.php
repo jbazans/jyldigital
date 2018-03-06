@@ -1,7 +1,12 @@
 <?php
 	session_start();
 	if (isset($_SESSION['nombre'])) {
-		
+		include("../recursos/conexion.php");
+		if($con){
+			$sql="UPDATE TB_MSG_WEB SET msg_state=1 where msg_ip='".
+			$_GET['idCli']."'";
+			$result=$con->query($sql);
+		}
 	}else{
 		header("Location: index.php");
 	}
@@ -9,7 +14,7 @@
 <!DOCTYPE>
 <html>
 <head>
-	<title>DashBoard Admininstrador | Editar</title>
+	<title>DashBoard Admininstrador</title>
 	<meta charset="utf-8">
 	<meta name="description" content="Regalos personalizados">
   	<meta name="keywords" content="Imprenta, Sublimacion, Publicidad">
@@ -21,7 +26,7 @@
 	<link rel="icon" type="image/png" href="../img/icono/icono.png" />
 	<link rel="stylesheet" type="text/css" href="../css/admin-main.css">
 </head>
-<body onload="ajustar()">
+<body onload="ajustar_chat_enlinea('<?php echo $_GET['idCli']; ?>')">
 	<div class="pantalla-carga">
 		<div class="cuadro-carga">
 			<img src="../img/gif/carga.gif" class="img-carga">
@@ -54,71 +59,52 @@
 			<div class="opciones-admin">
 				<a href=""><div class="opcion">Inicio</div></a>
 				<a href="main.php"><div class="opcion">Agregar productos</div></a>
-				<a href="productos.php"><div class="opcion opc-active">Editar producto</div></a>
-				<a href="chatEnLinea.php"><div class="opcion">Chat en linea</div></a>
+				<a href="productos.php"><div class="opcion">Editar producto</div></a>
+				<a href="chatEnLinea.php"><div class="opcion opc-active">Chat en linea</div></a>
 				<a href="../"><div class="opcion">Ver mi web</div></a>
 				<a href="../recursos/LogOut.php"><div class="opcion">Salir</div></a>
 			</div>
 		</div>
 		<div class="panel-contenido">
-			<div class="titulo-panel"><strong>Seleccione un producto</strong></div>
-			<div class="contenido-panel">
-				<table class="table-main" id="table-web">
-					<tr>
-						<th>Nombre</th>
-						<th>Precio Web</th>
-						<th>Precio Tienda</th>
-						<th>Categoria</th>
-						<th>Opciones</th>
-					</tr>
-					
-						<?php
-						include("../recursos/conexion.php");
-						$sql="SELECT * FROM PRODUCTOS";
-						$result=$con->query($sql);
-						while($row=$result->fetch_assoc()){
-						?>
-					<tr>
-							<td><?php echo $row['pro_nombre']; ?></td>
-							<td><?php echo $row['pro_precio_web']; ?></td>
-							<td><?php echo $row['pro_precio_tienda']; ?></td>
-							<td><?php echo $row['pro_categoria']; ?></td>
-							<td>
-								<a href="editarproducto.php?id=<?php echo $row['pro_id']; ?>"><button class="btn-editar" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-								</a>
-							</td>
-					</tr>
-						<?php
+			<div class="titulo-panel"><strong>Chat en linea - <?php echo $_GET['idCli']; ?></strong></div>
+			<div class="contenido-chat-panel">
+				<div class="pantalla-chat" id="chat-web-online">
+				<?php
+				if($con){
+					$sql_chat="select * from TB_MSG_WEB where msg_orden LIKE '".
+					$_GET['idCli']."%' order by msg_orden asc";
+					$result=$con->query($sql_chat);
+					while($row=$result->fetch_assoc()){
+						if ($row['msg_tipo']=="cliente") {
+					?>
+					<div class="fila-mensajes">
+						<div class="mensaje-ind"><?php echo $row['msg_value']; ?>
+							<div class="mensaje-fecha">
+								(<?php echo $row['msg_fecha']." - ".$row['msg_hora']; ?>)
+							</div>
+						</div>
+					</div>
+					<?php
+						}else{
+					?>
+					<div class="fila-mensajes">
+						<div class="mensaje-ind-blue"><?php echo $row['msg_value']; ?>
+						</div>
+					</div>
+				<?php
 						}
-						?>					
-				</table>
-				<table class="table-main" id="table-movil">
-					<tr>
-						<th>Nombre</th>
-						<th>Precio Web</th>
-						<th>Precio Tienda</th>
-						<th>Opciones</th>
-					</tr>
-					
-						<?php
-						include("../recursos/conexion.php");
-						$sql="SELECT * FROM PRODUCTOS";
-						$result=$con->query($sql);
-						while($row=$result->fetch_assoc()){
-						?>
-					<tr>
-							<td><?php echo $row['pro_nombre']; ?></td>
-							<td><?php echo $row['pro_precio_web']; ?></td>
-							<td><?php echo $row['pro_precio_tienda']; ?></td>
-							<td>
-								<a href="editarproducto.php?id=<?php echo $row['pro_id']; ?>"><button class="btn-editar" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-								</a>
-							</td>
-					</tr>
-						<?php
-						}
-						?>					
-				</table>
+					}
+				}
+				?>
+				</div>
+				<div class="input-resp-web">
+					<div class="lado-input">
+						<input type="text" id="input-resp">
+					</div>
+					<div class="lado-boton">
+						<button class="btn-send" onclick="send_resp('<?php echo $_GET['idCli']; ?>')"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

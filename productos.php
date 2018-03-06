@@ -2,7 +2,7 @@
 	include("partes.php");
 	include("recursos/conexion.php");
 	include("recursos/funciones.php");
-	
+
 	if (isset($_GET['categoria'])) {
 		$categoria=$_GET['categoria'];
 		$cat=quitar_tildes($categoria);
@@ -14,6 +14,8 @@
 					}else{
 						$sql.=" order by pro_precio_web desc";
 					}					
+				}else{
+					$sql.=" order by pro_precio_web asc";
 				}
 				$result = $con->query($sql);
 				$productos=array();
@@ -26,21 +28,23 @@
 	}else{
 		if (isset($_GET['producto'])) {
 			if ($con){
-					$sql = "SELECT * FROM PRODUCTOS where pro_nombre LIKE '%".$_GET['producto']."%'";
-					if (isset($_GET['order'])) {
-						if ($_GET['order']=="0") {
-							$sql.=" order by pro_precio_web asc";
-						}else{
-							$sql.=" order by pro_precio_web desc";
-						}					
-					}
-					$result = $con->query($sql);
-					$productos=array();
-					$cont_palabra=0;
-					while($row = $result->fetch_assoc()) {
-						array_push($productos, $row);
-						$cont_palabra++;
-					}
+				$sql = "SELECT * FROM PRODUCTOS where pro_nombre LIKE '%".$_GET['producto']."%'";
+				if (isset($_GET['order'])) {
+					if ($_GET['order']=="0") {
+						$sql.=" order by pro_precio_web asc";
+					}else{
+						$sql.=" order by pro_precio_web desc";
+					}					
+				}else{
+					$sql.=" order by pro_precio_web asc";
+				}
+				$result = $con->query($sql);
+				$productos=array();
+				$cont_palabra=0;
+				while($row = $result->fetch_assoc()) {
+					array_push($productos, $row);
+					$cont_palabra++;
+				}
 			}
 		}else{
 			if ($con){
@@ -188,6 +192,12 @@
 					<a href="productos.php?categoria=Peluches">
 						<div class="categoria-titulo" id="Peluches">
 							Peluches
+						</div>
+					</a>
+					<div class="separador-categorias"></div>
+					<a href="productos.php?categoria=Accesorios">
+						<div class="categoria-titulo" id="Accesorios">
+							Accesorios
 						</div>
 					</a>
 				</div>

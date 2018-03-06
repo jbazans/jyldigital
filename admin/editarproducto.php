@@ -55,6 +55,7 @@
 				<a href=""><div class="opcion">Inicio</div></a>
 				<a href="main.php"><div class="opcion">Agregar productos</div></a>
 				<a href="productos.php"><div class="opcion opc-active">Editar producto</div></a>
+				<a href="chatEnLinea.php"><div class="opcion">Chat en linea</div></a>
 				<a href="../"><div class="opcion">Ver mi web</div></a>
 				<a href="../recursos/LogOut.php"><div class="opcion">Salir</div></a>
 			</div>
